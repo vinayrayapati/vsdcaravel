@@ -13,7 +13,7 @@
    3.  Dfucntional is added in the sim defines since we want to deal with the functional model of verilog files instead of the gate level model netlists of sky130. The functional models make it easier for the porting of the technology node.
    4.  Any additional include paths are defined in the iverilog script of the makefile.
     
-    <img width="638" alt="Screenshot 2023-02-27 at 10 13 32 AM" src="https://user-images.githubusercontent.com/110079631/221476303-36032c82-e3c1-4ff4-b7bf-06c9fe46c4af.png">
+     <img width="638" alt="Screenshot 2023-02-27 at 10 13 32 AM" src="https://user-images.githubusercontent.com/110079631/221476303-36032c82-e3c1-4ff4-b7bf-06c9fe46c4af.png">
     
 - **Second Challenge:-**
     1.  Identifying the similar counterparts of sky130 IO's in scl IO library.
@@ -52,7 +52,7 @@
             <img width="447" alt="Screenshot 2023-02-20 at 12 15 34 PM" src="https://user-images.githubusercontent.com/110079631/221513151-fb2c2046-b20b-45e4-9ff9-3fd4987db9f8.png">
 
 
-- **Third CHallenge:-**
+- **Third Challenge:-**
     1. Identifying the similar counterparts of sky130 logic blocks in scl std library.
     2. This can be achieved by comparing the logic specifications provided in the scl std library.
     3. Next, we need to replace the logic blocks both combinational and sequential in sky130 with their equal couterpart scl180 verilog module instantiations by including them in the caraval_netlists.v.
