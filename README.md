@@ -6,8 +6,7 @@
 
 ## 1. The Initial test run using RISCV GNU TOOL CHAIN
 
-<img width="564" alt="Screenshot 2023-02-09 at 11 37 53 AM" src="https://user-images.githubusercontent.com/110079631/217732125-68e52751-0724-4eec-a5bc-cb142c8b39a6.png">
-
+<img width="743" alt="Screenshot 2023-02-27 at 6 33 55 PM" src="https://user-images.githubusercontent.com/110079631/221571215-24b8c4c6-c268-4c32-8105-a15ea9f60e90.png">
 
 ## 2. Adoption Challenges from sky130 to scl180
 
