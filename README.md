@@ -109,7 +109,8 @@
  - Dr.Madhav Rao, ECE Department, IIIT Bangalore.
 
 ### References
- - Jim Ledin “Modern Computer Architecture and Organisation" (2022)
+ - SCL PDK
+ - EFabless
 
 ### Contact Information
  - Vinay Rayapati,Post-Graduate student,International Institute of Information Technology Bangalore,vinayrayapati@outlook.com
