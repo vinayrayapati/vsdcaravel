@@ -1,11 +1,15 @@
 # vsdcaravel
 
-## The Initial test run using RISCV GNU TOOL CHAIN
+# Table of contents
+ - [1.The Initial test run using RISCV GNU TOOL CHAIN](#1-The-Initial-test-run-using-RISCV-GNU-TOOL-CHAIN)
+ - [2.Adoption Challenges from sky130 to scl180](#2-Adoption-Challenges-from-sky130-to-scl180)
+
+## 1. The Initial test run using RISCV GNU TOOL CHAIN
 
 <img width="564" alt="Screenshot 2023-02-09 at 11 37 53 AM" src="https://user-images.githubusercontent.com/110079631/217732125-68e52751-0724-4eec-a5bc-cb142c8b39a6.png">
 
 
-## Adoption Challenges from sky130 to scl180
+## 2. Adoption Challenges from sky130 to scl180
 
 - **First Challenge:-** 
    1.  Modifying the Makefile to satify our requirements of porting from sky130 pdk to scl180 pdk. 
