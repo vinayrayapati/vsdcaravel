@@ -97,6 +97,40 @@
             <img width="439" alt="Screenshot 2023-02-25 at 1 25 10 PM" src="https://user-images.githubusercontent.com/110079631/221513499-acc9219e-a6de-4762-972c-faf7601253b2.png">
 
 
+- **Fourth Challenge:-**
+(post Mid-term)
+
+Identify the nets that are left unbinded and declare them as wires in the file tsl18fs120_scl.v for various combinational circuit modules from the lines 2000 to the line 15,000.
+
+
+<img width="1512" alt="Screenshot 2023-03-14 at 10 47 32 AM" src="https://user-images.githubusercontent.com/110079631/225524806-9d613f5c-050c-490f-8ef4-6d1c4663f752.png">
+
+
+<img width="1512" alt="Screenshot 2023-03-14 at 11 05 36 AM" src="https://user-images.githubusercontent.com/110079631/225524862-b323724f-ae81-4d08-becf-d05ca4e11975.png">
+
+
+<img width="1512" alt="Screenshot 2023-03-14 at 11 22 56 AM" src="https://user-images.githubusercontent.com/110079631/225524935-9bd01433-e5fb-43e5-93a3-d484f9379011.png">
+
+
+<img width="1512" alt="Screenshot 2023-03-14 at 11 24 24 AM" src="https://user-images.githubusercontent.com/110079631/225524957-bce7f19a-afac-423e-a24d-e1839c40cbec.png">
+
+
+<img width="1512" alt="Screenshot 2023-03-14 at 11 30 57 AM" src="https://user-images.githubusercontent.com/110079631/225525098-6f5943b3-2aa1-419f-8f78-448454a140f1.png">
+
+
+<img width="1512" alt="Screenshot 2023-03-14 at 11 32 39 AM" src="https://user-images.githubusercontent.com/110079631/225525138-bea9637f-2493-4765-a454-678fc46f3226.png">
+
+
+<img width="1512" alt="Screenshot 2023-03-14 at 11 35 57 AM" src="https://user-images.githubusercontent.com/110079631/225525161-c170be7e-8388-480d-9480-1b9bcf1d5c44.png">
+
+
+- **Fifth Challenge:-**
+
+
+<img width="1512" alt="Screenshot 2023-03-14 at 11 37 46 AM" src="https://user-images.githubusercontent.com/110079631/225525243-43610f15-f230-4e21-b46c-ca36ab7505c0.png">
+
+
+<img width="1512" alt="Screenshot 2023-03-14 at 11 38 07 AM" src="https://user-images.githubusercontent.com/110079631/225525267-81558290-327c-423f-b7fc-7ebd204b7f82.png">
 
 
 
