@@ -98,7 +98,7 @@
 
 
 - **Fourth Challenge:-**
-(post Mid-term)
+**(post Mid-term)**
 
 Identify the nets that are left unbinded and declare them as wires in the file tsl18fs120_scl.v for various combinational circuit modules from the lines 2000 to the line 15,000.
 
@@ -133,6 +133,40 @@ Identifying the difference in the ports declared in the firmware verilog files a
 
 
   - <img width="1512" alt="Screenshot 2023-03-14 at 11 38 07 AM" src="https://user-images.githubusercontent.com/110079631/225525267-81558290-327c-423f-b7fc-7ebd204b7f82.png">
+
+- ** Sixth Challenge:-**
+
+Power pins errors
+
+<img width="1512" alt="Screenshot 2023-04-19 at 2 31 05 PM" src="https://user-images.githubusercontent.com/110079631/233271060-a3aada4d-6756-4d89-a06c-154e4b69de1f.png">
+
+<img width="1286" alt="Screenshot 2023-04-19 at 2 31 31 PM" src="https://user-images.githubusercontent.com/110079631/233271087-070a4100-5697-4f9f-85e1-bd54c706c055.png">
+
+<img width="1224" alt="Screenshot 2023-04-19 at 2 31 40 PM" src="https://user-images.githubusercontent.com/110079631/233271116-0c91303f-1481-45c4-b12a-0645f9a304b4.png">
+
+<img width="1309" alt="Screenshot 2023-04-19 at 2 31 59 PM" src="https://user-images.githubusercontent.com/110079631/233271135-6e68ea09-1b29-4990-a958-787131395aea.png">
+
+<img width="1329" alt="Screenshot 2023-04-19 at 2 32 09 PM" src="https://user-images.githubusercontent.com/110079631/233271157-a5134ef4-b26c-400b-9c32-22c43d111eb3.png">
+
+<img width="1217" alt="Screenshot 2023-04-19 at 2 32 20 PM" src="https://user-images.githubusercontent.com/110079631/233271175-e9a5ebc3-46ba-43f7-84a3-1b6cd3019622.png">
+
+<img width="1265" alt="Screenshot 2023-04-19 at 2 32 30 PM" src="https://user-images.githubusercontent.com/110079631/233271208-5c93fb7c-9cc8-46d8-992b-159fa13eb263.png">
+
+<img width="1252" alt="Screenshot 2023-04-19 at 2 33 20 PM" src="https://user-images.githubusercontent.com/110079631/233271234-82269605-eda2-4726-8f74-8729b224c30f.png">
+
+<img width="1190" alt="Screenshot 2023-04-19 at 2 34 01 PM" src="https://user-images.githubusercontent.com/110079631/233271256-a9c8ae69-6a03-4290-8a9b-9c9b27c4d934.png">
+
+<img width="1320" alt="Screenshot 2023-04-19 at 2 36 22 PM" src="https://user-images.githubusercontent.com/110079631/233271286-822bc2b2-7a8d-4229-bd8f-3e2852bce398.png">
+
+<img width="1248" alt="Screenshot 2023-04-19 at 2 36 44 PM" src="https://user-images.githubusercontent.com/110079631/233271307-f1588944-5551-4ff6-801c-a332ebb9d355.png">
+
+<img width="1257" alt="Screenshot 2023-04-19 at 2 37 02 PM" src="https://user-images.githubusercontent.com/110079631/233271330-9ca044b4-40dd-4b57-8742-2dbf3c75af03.png">
+
+<img width="1324" alt="Screenshot 2023-04-19 at 2 37 12 PM" src="https://user-images.githubusercontent.com/110079631/233271353-8dec1829-a6e3-4ea0-b0d9-84bce0b9eb10.png">
+
+<img width="1248" alt="Screenshot 2023-04-19 at 2 37 39 PM" src="https://user-images.githubusercontent.com/110079631/233271373-452965c6-8de9-4d84-8cff-8167c1e4a6fa.png">
+
+<img width="1357" alt="Screenshot 2023-04-19 at 2 37 53 PM" src="https://user-images.githubusercontent.com/110079631/233271392-89603e0e-f571-4686-a799-e182c71f8976.png">
 
 
 
