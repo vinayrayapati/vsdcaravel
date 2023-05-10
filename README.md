@@ -2,13 +2,15 @@
 
 # Table of contents
  - [1.The Initial test run using RISCV GNU TOOL CHAIN](#1-The-Initial-test-run-using-RISCV-GNU-TOOL-CHAIN)
- - [2.Adoption Challenges from sky130 to scl180](#2-Adoption-Challenges-from-sky130-to-scl180)
+ - [2.Steps to Follow](#2-Steps-to-Follow)
+ - [3.Adoption Challenges from sky130 to scl180](#3-Adoption-Challenges-from-sky130-to-scl180)
+ - [4.Future Work Left](#4-Future-Work-Left)
 
 ## 1. The Initial test run using RISCV GNU TOOL CHAIN
 
 <img width="743" alt="Screenshot 2023-02-27 at 6 33 55 PM" src="https://user-images.githubusercontent.com/110079631/221571215-24b8c4c6-c268-4c32-8105-a15ea9f60e90.png">
 
-## 2. Steps to follow:-
+## 2. Steps to Follow
 
 <b> Change the paths of `PDK_ROOT`, `PDK`, `GCC_PATH` and `GCC_PREFIX` according to the paths on the system you are working on. </b>
 
@@ -243,7 +245,7 @@ Identifying the unnecessary power pins at this stage that are not required as th
 
   <img width="1248" alt="Screenshot 2023-05-10 at 11 14 35 AM" src="https://github.com/vinayrayapati/vsdcaravel/assets/110079631/83971159-d5ac-4f5b-a2d4-e4869592d7e9">
 
-- **Future Work Left**
+## 4. Future Work Left
 
 -  Rectify the simulation mismatches seen now by backtracing the signals.
 -  After the successful rectification of the simulation mismatches the expected output should be as ahown in the below image.
