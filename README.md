@@ -1,5 +1,7 @@
 # vsdcaravel
 
+The Main idea behind this project is to port from sky130 pdk to scl180 pdk. The Caravel template is created using their netlists and replpacing the sky130 with scl180 and mainly the GPIO portings are done.
+
 # Table of contents
  - [1.The Initial test run using RISCV GNU TOOL CHAIN](#1-The-Initial-test-run-using-RISCV-GNU-TOOL-CHAIN)
  - [2.Steps to Follow](#2-Steps-to-Follow)
