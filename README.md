@@ -235,13 +235,22 @@ Identifying the unnecessary power pins at this stage that are not required as th
 
 - **Results after a successfull porting from sky130 to scl180**
 
-This is the final output obtained after succesfully eliminating all the porting errors and power pin errors:
+- This is the final output obtained after succesfully eliminating all the porting errors and power pin errors:
 
-   - <img width="407" alt="Screenshot 2023-04-25 at 11 32 50 AM" src="https://github.com/vinayrayapati/vsdcaravel/assets/110079631/e0933126-0543-4097-8ce5-84e6cd97081e">
+   <img width="407" alt="Screenshot 2023-04-25 at 11 32 50 AM" src="https://github.com/vinayrayapati/vsdcaravel/assets/110079631/e0933126-0543-4097-8ce5-84e6cd97081e">
+
+- This is the final output viewed in gtkwave
+
+  <img width="1248" alt="Screenshot 2023-05-10 at 11 14 35 AM" src="https://github.com/vinayrayapati/vsdcaravel/assets/110079631/83971159-d5ac-4f5b-a2d4-e4869592d7e9">
 
 - **Future Work Left**
 
-- Rectify the simulation mismatches seen now by backtracing the signals.
+-  Rectify the simulation mismatches seen now by backtracing the signals.
+-  After the successful rectification of the simulation mismatches the expected output should be as ahown in the below image.
+   
+   <img width="1250" alt="Screenshot 2023-05-10 at 11 15 27 AM" src="https://github.com/vinayrayapati/vsdcaravel/assets/110079631/69f0b592-e659-4a9f-8d6b-937934e6068f">
+
+
 
 
 ### Author
