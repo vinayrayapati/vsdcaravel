@@ -8,7 +8,33 @@
 
 <img width="743" alt="Screenshot 2023-02-27 at 6 33 55 PM" src="https://user-images.githubusercontent.com/110079631/221571215-24b8c4c6-c268-4c32-8105-a15ea9f60e90.png">
 
-## 2. Adoption Challenges from sky130 to scl180
+## 2. Steps to follow:-
+
+<b> Change the paths of `PDK_ROOT`, `PDK`, `GCC_PATH` and `GCC_PREFIX` according to the paths on the system you are working on. </b>
+
+Steps to follow :
+
+```
+$ git clone https://github.com/DantuNandiniDevi/Caravel_pcb
+
+$ cd Caravel_pcb/verification/verilog/dv/caravel/mgmt_soc/hkspi
+
+$ export PDK_ROOT= <scl_pdk_v2 path>
+
+$ export PDK=scl018
+
+$ export GCC_PATH=/opt/homebrew/Cellar/riscv-gnu-toolchain/main/bin
+
+$ export GCC_PREFIX=riscv64-unknown-elf
+
+$ make 
+
+$ gtkwave hkspi.vcd 
+
+``` 
+
+
+## 3. Adoption Challenges from sky130 to scl180
 
 - **First Challenge:-** 
    1.  Modifying the Makefile to satify our requirements of porting from sky130 pdk to scl180 pdk. 
