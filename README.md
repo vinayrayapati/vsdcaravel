@@ -250,7 +250,7 @@ Identifying the unnecessary power pins at this stage that are not required as th
 -  Rectify the simulation mismatches seen now by backtracing the signals.
 -  After the successful rectification of the simulation mismatches the expected output should be as ahown in the below image.
    
-   <img width="1250" alt="Screenshot 2023-05-10 at 11 15 27 AM" src="https://github.com/vinayrayapati/vsdcaravel/assets/110079631/69f0b592-e659-4a9f-8d6b-937934e6068f">
+   <img width="1166" alt="Screenshot 2023-05-10 at 11 21 11 AM" src="https://github.com/vinayrayapati/vsdcaravel/assets/110079631/d11af21d-8f78-4abd-850e-ec0117be9344">
 
 
 
