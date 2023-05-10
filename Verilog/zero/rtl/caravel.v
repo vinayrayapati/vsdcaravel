@@ -252,10 +252,10 @@ module caravel (
 	
 	// top-level buffers
 	buff_flash_clkrst flash_clkrst_buffers (
-	`ifdef USE_POWER_PINS
-	    .VPWR(vccd_core),
-	    .VGND(vssd_core),
-	`endif
+	// `ifdef USE_POWER_PINS
+	//     .VPWR(vccd_core),
+	//     .VGND(vssd_core),
+	// `endif
 	.in_n({
 		caravel_clk,
 		caravel_rstn,
@@ -321,6 +321,10 @@ module caravel (
 		);
 	`endif
 
+wire rst;
+
+assign rst = resetb;
+
 	chip_io padframe(
 	`ifndef TOP_ROUTING
 		// Package Pins
@@ -361,7 +365,7 @@ module caravel (
 	.gpio(gpio),
 	.mprj_io(mprj_io),
 	.clock(clock),
-	.resetb(resetb),
+	.resetb(rst),
 	.flash_csb(flash_csb),
 	.flash_clk(flash_clk),
 	.flash_io0(flash_io0),

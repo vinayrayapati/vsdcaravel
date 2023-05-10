@@ -8424,10 +8424,10 @@ assign uart_rx_fifo_wrport_dat_r = memdat_2;
 assign uart_rx_fifo_rdport_dat_r = memdat_3;
 
 VexRiscv VexRiscv(
-`ifdef USE_POWER_PINS
-    .vccd1(VPWR),
-    .vssd1(VGND),
-`endif
+// `ifdef USE_POWER_PINS
+//     .vccd1(VPWR),
+//     .vssd1(VGND),
+// `endif
 	.clk(sys_clk),
 	.dBusWishbone_ACK(mgmtsoc_dbus_dbus_ack),
 	.dBusWishbone_DAT_MISO(mgmtsoc_dbus_dbus_dat_r),

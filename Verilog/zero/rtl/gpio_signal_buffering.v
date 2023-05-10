@@ -116,12 +116,12 @@ module gpio_signal_buffering (
     wire [195:0] buf_out;
 
     buffd1 signal_buffers [195:0] (
-	`ifdef USE_POWER_PINS
-	    .VPWR(vccd),
-	    .VGND(vssd),
-	    .VPB(vccd),
-	    .VNB(vssd),
-	`endif
+	// `ifdef USE_POWER_PINS
+	//     .VPWR(vccd),
+	//     .VGND(vssd),
+	//     .VPB(vccd),
+	//     .VNB(vssd),
+	// `endif
 	.I(buf_in),
 	.Z(buf_out)
     );
@@ -475,12 +475,12 @@ module gpio_signal_buffering (
     assign mgmt_io_oeb_buf[2] = buf_out[195];
 
   scl_decap_12 sigbuf_decaps [100:0] (
-	`ifdef USE_POWER_PINS
-	    .VPWR(vccd),
-	    .VGND(vssd),
-	    .VPB(vccd),
-	    .VNB(vssd)
-	`endif
+	// `ifdef USE_POWER_PINS
+	//     .VPWR(vccd),
+	//     .VGND(vssd),
+	//     .VPB(vccd),
+	//     .VNB(vssd)
+	// `endif
   );
 
 endmodule

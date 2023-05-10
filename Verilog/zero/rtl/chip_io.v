@@ -198,9 +198,9 @@ module chip_io(
     	);
 
     	pvdi user1_vccd_lvclamp_pad (
-		`USER1_ABUTMENT_PINS
-		.VDD(vccd1),
-		.VSS(vssd1),
+		// `USER1_ABUTMENT_PINS
+		// .VDD(vccd1),
+		// .VSS(vssd1),
 `ifndef TOP_ROUTING
 		.VDD(vccd1_pad)
 `endif
@@ -222,9 +222,9 @@ module chip_io(
     	);
 
     	pv0i user1_vssd_lvclamp_pad (
-		`USER1_ABUTMENT_PINS
-		.VDD(vccd1),
-		.VSS(vssd1),
+		// `USER1_ABUTMENT_PINS
+		// .VDD(vccd1),
+		// .VSS(vssd1),
 `ifndef TOP_ROUTING
 		.VSS(vssd1_pad)
 `endif
@@ -241,9 +241,9 @@ module chip_io(
     	);
 
     	pvdi user2_vccd_lvclamp_pad (
-		`USER2_ABUTMENT_PINS
-		.VDD(vccd2),
-		.VSS(vssd2),
+		// `USER2_ABUTMENT_PINS
+		// .VDD(vccd2),
+		// .VSS(vssd2),
 `ifndef TOP_ROUTING
 		.VDD(vccd2_pad)
 `endif
@@ -257,9 +257,9 @@ module chip_io(
     	);
 
     	pv0i user2_vssd_lvclamp_pad (
-		`USER2_ABUTMENT_PINS
-		.VDD(vccd2),
-		.VSS(vssd2),
+		// `USER2_ABUTMENT_PINS
+		// .VDD(vccd2),
+		// .VSS(vssd2),
 `ifndef TOP_ROUTING
 		.VSS(vssd2_pad)
 `endif
@@ -306,20 +306,20 @@ module chip_io(
 	pc3o01 resetb_pad (
 		`MGMT_ABUTMENT_PINS
 		`ifndef	TOP_ROUTING
-		    .PAD(resetb),
+		    .I(resetb)
 		`endif
-		.TIE_WEAK_HI_H(xresloop),   // Loop-back connection to pad through pad_a_esd_h
-		.TIE_HI_ESD(),
-		.TIE_LO_ESD(xres_vss_loop),
-		.PAD_A_ESD_H(xresloop),
-		.XRES_H_N(resetb_core_h),
-		.DISABLE_PULLUP_H(xres_vss_loop), // 0 = enable pull-up on reset pad
-		.ENABLE_H(porb_h),	 	  // Power-on-reset
-   		.EN_VDDIO_SIG_H(xres_vss_loop),	  // No idea.
-   		.I(xres_vss_loop),	  // 1 = use filt_in_h else filter the pad input
-   		.FILT_IN_H(xres_vss_loop),	  // Alternate input for glitch filter
-   		.PULLUP_H(xres_vss_loop),	  // Pullup connection for alternate filter input
-		.ENABLE_VDDIO(vccd_const_one[6])
+		// .TIE_WEAK_HI_H(xresloop),   // Loop-back connection to pad through pad_a_esd_h
+		// .TIE_HI_ESD(),
+		// .TIE_LO_ESD(xres_vss_loop),
+		// .PAD_A_ESD_H(xresloop),
+		// .XRES_H_N(resetb_core_h),
+		// .DISABLE_PULLUP_H(xres_vss_loop), // 0 = enable pull-up on reset pad
+		// .ENABLE_H(porb_h),	 	  // Power-on-reset
+   		// .EN_VDDIO_SIG_H(xres_vss_loop),	  // No idea.
+   		// .I(xres_vss_loop),	  // 1 = use filt_in_h else filter the pad input
+   		// .FILT_IN_H(xres_vss_loop),	  // Alternate input for glitch filter
+   		// .PULLUP_H(xres_vss_loop),	  // Pullup connection for alternate filter input
+		// .ENABLE_VDDIO(vccd_const_one[6])
     	);
 
 	// Corner cells (These are overlay cells;  it is not clear what is normally

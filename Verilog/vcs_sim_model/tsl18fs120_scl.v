@@ -649,6 +649,8 @@ module adp1d2 (A,B,CI,S,P,CO);
 output  S,P,CO;
 input   A,B,CI;
 
+wire A_buf,B_buf,CI_buf;
+
 buf (A_buf,A);
 buf (B_buf,B);
 buf (CI_buf,CI);
@@ -762,6 +764,8 @@ module adp1d4 (A,B,CI,S,P,CO);
 
 output  S,P,CO;
 input   A,B,CI;
+
+wire A_buf,B_buf,CI_buf;
 
 buf (A_buf,A);
 buf (B_buf,B);
@@ -2165,6 +2169,8 @@ module an12d1 (A1,A2,Z);
 output  Z;
 input   A1,A2;
 
+wire not_A1;
+
 not (not_A1,A1);
 and #1 (Z,A2,not_A1);
 
@@ -2220,6 +2226,8 @@ module an12d2 (A1,A2,Z);
 
 output  Z;
 input   A1,A2;
+
+wire not_A1;
 
 not (not_A1,A1);
 and #1 (Z,A2,not_A1);
@@ -2277,6 +2285,8 @@ module an12d4 (A1,A2,Z);
 output  Z;
 input   A1,A2;
 
+wire not_A1;
+
 not (not_A1,A1);
 and #1 (Z,A2,not_A1);
 
@@ -2332,6 +2342,8 @@ module aoi211d1 (C1,C2,B,A,ZN);
 
 output  ZN;
 input   C1,C2,B,A;
+
+wire g_1_out,g_2_out;
 
 or (g_1_out,B,A,C2);
 or (g_2_out,B,A,C1);
@@ -2393,6 +2405,8 @@ module aoi211d2 (C1,C2,B,A,ZN);
 output  ZN;
 input   C1,C2,B,A;
 
+wire g_1_out,g_2_out;
+
 or (g_1_out,B,A,C2);
 or (g_2_out,B,A,C1);
 nand #1 (ZN,g_1_out,g_2_out);
@@ -2452,6 +2466,8 @@ module aoi211d4 (C1,C2,B,A,ZN);
 
 output  ZN;
 input   C1,C2,B,A;
+
+wire g_1_out,g_2_out;
 
 or (g_1_out,B,A,C2);
 or (g_2_out,B,A,C1);
@@ -2513,6 +2529,8 @@ module aoi21d1 (B1,B2,A,ZN);
 output  ZN;
 input   B1,B2,A;
 
+wire g_1_out;
+
 and (g_1_out,B1,B2);
 nor #1 (ZN,g_1_out,A);
 
@@ -2570,6 +2588,8 @@ module aoi21d2 (B1,B2,A,ZN);
 
 output  ZN;
 input   B1,B2,A;
+
+wire g_1_out;
 
 and (g_1_out,B1,B2);
 nor #1 (ZN,g_1_out,A);
@@ -2629,6 +2649,8 @@ module aoi21d4 (B1,B2,A,ZN);
 output  ZN;
 input   B1,B2,A;
 
+wire g_1_out;
+
 and (g_1_out,B1,B2);
 nor #1 (ZN,g_1_out,A);
 
@@ -2686,6 +2708,8 @@ module aoi221d1 (C1,C2,B1,B2,A,ZN);
 
 output  ZN;
 input   C1,C2,B1,B2,A;
+
+wire g_1_out,g_2_out;
 
 and (g_1_out,C1,C2);
 and (g_2_out,B2,B1);
@@ -2748,6 +2772,8 @@ module aoi221d2 (C1,C2,B1,B2,A,ZN);
 output  ZN;
 input   C1,C2,B1,B2,A;
 
+wire g_1_out,g_2_out;
+
 and (g_1_out,C1,C2);
 and (g_2_out,B2,B1);
 nor #1 (ZN,g_1_out,g_2_out,A);
@@ -2809,6 +2835,8 @@ module aoi221d4 (C1,C2,B1,B2,A,ZN);
 output  ZN;
 input   C1,C2,B1,B2,A;
 
+wire g_1_out,g_2_out;
+
 and (g_1_out,C1,C2);
 and (g_2_out,B2,B1);
 nor #1 (ZN,g_1_out,g_2_out,A);
@@ -2869,6 +2897,8 @@ module aoi2222d1 (A1,A2,B1,B2,C1,C2,D1,D2,ZN);
 
 output  ZN;
 input   A1,A2,B1,B2,C1,C2,D1,D2;
+
+wire g_1_out,g_2_out,g_3_out,g_4_out;
 
 and (g_1_out,A2,A1);
 and (g_2_out,B2,B1);
@@ -2938,6 +2968,8 @@ module aoi2222d2 (A1,A2,B1,B2,C1,C2,D1,D2,ZN);
 output  ZN;
 input   A1,A2,B1,B2,C1,C2,D1,D2;
 
+wire g_1_out,g_2_out,g_3_out,g_4_out;
+
 and (g_1_out,A2,A1);
 and (g_2_out,B2,B1);
 and (g_3_out,C2,C1);
@@ -3005,6 +3037,8 @@ module aoi2222d4 (A1,A2,B1,B2,C1,C2,D1,D2,ZN);
 
 output  ZN;
 input   A1,A2,B1,B2,C1,C2,D1,D2;
+
+wire g_1_out,g_2_out,g_3_out,g_4_out;
 
 and (g_1_out,A2,A1);
 and (g_2_out,B2,B1);
@@ -3074,6 +3108,8 @@ module aoi222d1 (A1,A2,B1,B2,C1,C2,ZN);
 output  ZN;
 input   A1,A2,B1,B2,C1,C2;
 
+wire g_1_out,g_2_out,g_3_out;
+
 and (g_1_out,A2,A1);
 and (g_2_out,B2,B1);
 and (g_3_out,C2,C1);
@@ -3137,6 +3173,8 @@ module aoi222d2 (A1,A2,B1,B2,C1,C2,ZN);
 
 output  ZN;
 input   A1,A2,B1,B2,C1,C2;
+
+wire g_1_out,g_2_out,g_3_out;
 
 and (g_1_out,A2,A1);
 and (g_2_out,B2,B1);
@@ -3202,6 +3240,8 @@ module aoi222d4 (A1,A2,B1,B2,C1,C2,ZN);
 output  ZN;
 input   A1,A2,B1,B2,C1,C2;
 
+wire g_1_out,g_2_out,g_3_out;
+
 and (g_1_out,A2,A1);
 and (g_2_out,B2,B1);
 and (g_3_out,C2,C1);
@@ -3266,6 +3306,8 @@ module aoi22d1 (A1,A2,B1,B2,ZN);
 output  ZN;
 input   A1,A2,B1,B2;
 
+wire g_1_out,g_2_out;
+
 and (g_1_out,A2,A1);
 and (g_2_out,B2,B1);
 nor #1 (ZN,g_1_out,g_2_out);
@@ -3325,6 +3367,8 @@ module aoi22d2 (A1,A2,B1,B2,ZN);
 
 output  ZN;
 input   A1,A2,B1,B2;
+
+wire g_1_out,g_2_out;
 
 and (g_1_out,A2,A1);
 and (g_2_out,B2,B1);
@@ -3386,6 +3430,8 @@ module aoi22d4 (A1,A2,B1,B2,ZN);
 output  ZN;
 input   A1,A2,B1,B2;
 
+wire g_1_out,g_2_out;
+
 and (g_1_out,A2,A1);
 and (g_2_out,B2,B1);
 nor #1 (ZN,g_1_out,g_2_out);
@@ -3445,6 +3491,8 @@ module aoi311d1 (C3,C2,C1,B,A,ZN);
 
 output  ZN;
 input   C3,C2,C1,B,A;
+
+wire g_1_out;
 
 and (g_1_out,C1,C3,C2);
 nor #1 (ZN,g_1_out,B,A);
@@ -3506,6 +3554,8 @@ module aoi311d2 (C3,C2,C1,B,A,ZN);
 output  ZN;
 input   C3,C2,C1,B,A;
 
+wire g_1_out;
+
 and (g_1_out,C1,C3,C2);
 nor #1 (ZN,g_1_out,B,A);
 
@@ -3565,6 +3615,8 @@ module aoi311d4 (C3,C2,C1,B,A,ZN);
 
 output  ZN;
 input   C3,C2,C1,B,A;
+
+wire g_1_out;
 
 and (g_1_out,C1,C3,C2);
 nor #1 (ZN,g_1_out,B,A);
@@ -3626,6 +3678,8 @@ module aoi31d1 (B1,B2,B3,A,ZN);
 output  ZN;
 input   B1,B2,B3,A;
 
+wire g_1_out;
+
 and (g_1_out,B2,B1,B3);
 nor #1 (ZN,g_1_out,A);
 
@@ -3684,6 +3738,8 @@ module aoi31d2 (B1,B2,B3,A,ZN);
 
 output  ZN;
 input   B1,B2,B3,A;
+
+wire g_1_out;
 
 and (g_1_out,B2,B1,B3);
 nor #1 (ZN,g_1_out,A);
@@ -3744,6 +3800,8 @@ module aoi31d4 (B1,B2,B3,A,ZN);
 output  ZN;
 input   B1,B2,B3,A;
 
+wire g_1_out;
+
 and (g_1_out,B2,B1,B3);
 nor #1 (ZN,g_1_out,A);
 
@@ -3802,6 +3860,8 @@ module aoi321d1 (C3,C2,C1,B2,B1,A,ZN);
 
 output  ZN;
 input   C3,C2,C1,B2,B1,A;
+
+wire g_1_out,g_2_out;
 
 and (g_1_out,C3,C2,C1);
 and (g_2_out,B1,B2);
@@ -3866,6 +3926,8 @@ module aoi321d2 (C3,C2,C1,B2,B1,A,ZN);
 output  ZN;
 input   C3,C2,C1,B2,B1,A;
 
+wire g_1_out,g_2_out;
+
 and (g_1_out,C3,C2,C1);
 and (g_2_out,B1,B2);
 nor #1 (ZN,g_1_out,g_2_out,A);
@@ -3929,6 +3991,8 @@ module aoi321d4 (C3,C2,C1,B2,B1,A,ZN);
 output  ZN;
 input   C3,C2,C1,B2,B1,A;
 
+wire g_1_out,g_2_out;
+
 and (g_1_out,C3,C2,C1);
 and (g_2_out,B1,B2);
 nor #1 (ZN,g_1_out,g_2_out,A);
@@ -3991,6 +4055,8 @@ module aoi322d1 (C3,C2,C1,B2,B1,A2,A1,ZN);
 
 output  ZN;
 input   C3,C2,C1,B2,B1,A2,A1;
+
+wire g_1_out,g_2_out,g_3_out;
 
 and (g_1_out,C2,C1,C3);
 and (g_2_out,B2,B1);
@@ -4057,6 +4123,8 @@ module aoi322d2 (C3,C2,C1,B2,B1,A2,A1,ZN);
 output  ZN;
 input   C3,C2,C1,B2,B1,A2,A1;
 
+wire g_1_out,g_2_out,g_3_out;
+
 and (g_1_out,C2,C1,C3);
 and (g_2_out,B2,B1);
 and (g_3_out,A2,A1);
@@ -4121,6 +4189,8 @@ module aoi322d4 (C3,C2,C1,B2,B1,A2,A1,ZN);
 
 output  ZN;
 input   C3,C2,C1,B2,B1,A2,A1;
+
+wire g_1_out,g_2_out,g_3_out;
 
 and (g_1_out,C2,C1,C3);
 and (g_2_out,B2,B1);
@@ -4187,6 +4257,8 @@ module aoim211d1 (C2,C1,B,A,ZN);
 output  ZN;
 input   C2,C1,B,A;
 
+wire A_buf,B_buf,C1_buf,C2_buf;
+
 buf (C2_buf,C2);
 buf (C1_buf,C1);
 buf (B_buf,B);
@@ -4251,6 +4323,8 @@ module aoim211d2 (C2,C1,B,A,ZN);
 
 output  ZN;
 input   C2,C1,B,A;
+
+wire A_buf,B_buf,C1_buf,C2_buf;
 
 buf (C2_buf,C2);
 buf (C1_buf,C1);
@@ -4317,6 +4391,8 @@ module aoim211d4 (C2,C1,B,A,ZN);
 output  ZN;
 input   C2,C1,B,A;
 
+wire A_buf,B_buf,C1_buf,C2_buf;
+
 buf (C2_buf,C2);
 buf (C1_buf,C1);
 buf (B_buf,B);
@@ -4382,6 +4458,8 @@ module aoim21d1 (B2,B1,A,ZN);
 output  ZN;
 input   B2,B1,A;
 
+wire A_buf,B1_buf,B2_buf;
+
 buf (B2_buf,B2);
 buf (B1_buf,B1);
 buf (A_buf,A);
@@ -4444,6 +4522,8 @@ module aoim21d2 (B2,B1,A,ZN);
 
 output  ZN;
 input   B2,B1,A;
+
+wire A_buf,B1_buf,B2_buf;
 
 buf (B2_buf,B2);
 buf (B1_buf,B1);
@@ -4508,6 +4588,8 @@ module aoim21d4 (B2,B1,A,ZN);
 output  ZN;
 input   B2,B1,A;
 
+wire A_buf,B1_buf,B2_buf;
+
 buf (B2_buf,B2);
 buf (B1_buf,B1);
 buf (A_buf,A);
@@ -4570,6 +4652,8 @@ module aoim22d1 (B2,B1,A2,A1,Z);
 
 output  Z;
 input   B2,B1,A2,A1;
+
+wire A1_buf,A2_buf,B1_buf,B2_buf;
 
 buf (B2_buf,B2);
 buf (B1_buf,B1);
@@ -4636,6 +4720,8 @@ module aoim22d2 (B2,B1,A2,A1,Z);
 output  Z;
 input   B2,B1,A2,A1;
 
+wire A1_buf,A2_buf,B1_buf,B2_buf;
+
 buf (B2_buf,B2);
 buf (B1_buf,B1);
 buf (A2_buf,A2);
@@ -4700,6 +4786,8 @@ module aoim22d4 (B2,B1,A2,A1,Z);
 
 output  Z;
 input   B2,B1,A2,A1;
+
+wire A1_buf,A2_buf,B1_buf,B2_buf;
 
 buf (B2_buf,B2);
 buf (B1_buf,B1);
@@ -4766,6 +4854,8 @@ module aoim2m11d1 (C2,C1,B,A,ZN);
 output  ZN;
 input   C2,C1,B,A;
 
+wire A_buf,B_buf,C1_buf,C2_buf;
+
 buf (C2_buf,C2);
 buf (C1_buf,C1);
 buf (B_buf,B);
@@ -4830,6 +4920,8 @@ module aoim2m11d2 (C2,C1,B,A,ZN);
 
 output  ZN;
 input   C2,C1,B,A;
+
+wire A_buf,B_buf,C1_buf,C2_buf;
 
 buf (C2_buf,C2);
 buf (C1_buf,C1);
@@ -4896,6 +4988,8 @@ module aoim2m11d4 (C2,C1,B,A,ZN);
 output  ZN;
 input   C2,C1,B,A;
 
+wire A_buf,B_buf,C1_buf,C2_buf;
+
 buf (C2_buf,C2);
 buf (C1_buf,C1);
 buf (B_buf,B);
@@ -4960,6 +5054,8 @@ module aoim311d1 (C3,C2,C1,B,A,ZN);
 
 output  ZN;
 input   C3,C2,C1,B,A;
+
+wire A_buf,B_buf,C1_buf,C2_buf,C3_buf;
 
 buf (C3_buf,C3);
 buf (C2_buf,C2);
@@ -5028,6 +5124,8 @@ module aoim311d2 (C3,C2,C1,B,A,ZN);
 output  ZN;
 input   C3,C2,C1,B,A;
 
+wire A_buf,B_buf,C1_buf,C2_buf,C3_buf;
+
 buf (C3_buf,C3);
 buf (C2_buf,C2);
 buf (C1_buf,C1);
@@ -5094,6 +5192,8 @@ module aoim311d4 (C3,C2,C1,B,A,ZN);
 
 output  ZN;
 input   C3,C2,C1,B,A;
+
+wire A_buf,B_buf,C1_buf,C2_buf,C3_buf;
 
 buf (C3_buf,C3);
 buf (C2_buf,C2);
@@ -5162,6 +5262,8 @@ module aoim31d1 (B3,B2,B1,A,ZN);
 output  ZN;
 input   B3,B2,B1,A;
 
+wire A_buf,B1_buf,B2_buf,B3_buf;
+
 buf (B3_buf,B3);
 buf (B2_buf,B2);
 buf (B1_buf,B1);
@@ -5226,6 +5328,8 @@ module aoim31d2 (B3,B2,B1,A,ZN);
 
 output  ZN;
 input   B3,B2,B1,A;
+
+wire A_buf,B1_buf,B2_buf,B3_buf;
 
 buf (B3_buf,B3);
 buf (B2_buf,B2);
@@ -5292,6 +5396,8 @@ module aoim31d4 (B3,B2,B1,A,ZN);
 output  ZN;
 input   B3,B2,B1,A;
 
+wire A_buf,B1_buf,B2_buf,B3_buf;
+
 buf (B3_buf,B3);
 buf (B2_buf,B2);
 buf (B1_buf,B1);
@@ -5356,6 +5462,8 @@ module aoim3m11d1 (C3,C2,C1,B,A,ZN);
 
 output  ZN;
 input   C3,C2,C1,B,A;
+
+wire A_buf,B_buf,C1_buf,C2_buf,C3_buf;
 
 buf (C3_buf,C3);
 buf (C2_buf,C2);
@@ -5424,6 +5532,8 @@ module aoim3m11d2 (C3,C2,C1,B,A,ZN);
 output  ZN;
 input   C3,C2,C1,B,A;
 
+wire A_buf,B_buf,C1_buf,C2_buf,C3_buf;
+
 buf (C3_buf,C3);
 buf (C2_buf,C2);
 buf (C1_buf,C1);
@@ -5490,6 +5600,8 @@ module aoim3m11d4 (C3,C2,C1,B,A,ZN);
 
 output  ZN;
 input   C3,C2,C1,B,A;
+
+wire A_buf,B_buf,C1_buf,C2_buf,C3_buf;
 
 buf (C3_buf,C3);
 buf (C2_buf,C2);
@@ -5558,6 +5670,8 @@ module aon211d1 (C2,C1,B,A,ZN);
 output  ZN;
 input   C2,C1,B,A;
 
+wire g_1_out,g_2_out;
+
 and (g_1_out,B,A);
 and (g_2_out,A,C2,C1);
 nor #1 (ZN,g_1_out,g_2_out);
@@ -5617,6 +5731,8 @@ module aon211d2 (C2,C1,B,A,ZN);
 
 output  ZN;
 input   C2,C1,B,A;
+
+wire g_1_out,g_2_out;
 
 and (g_1_out,B,A);
 and (g_2_out,A,C2,C1);
@@ -5678,6 +5794,8 @@ module aon211d4 (C2,C1,B,A,ZN);
 output  ZN;
 input   C2,C1,B,A;
 
+wire g_1_out,g_2_out;
+
 and (g_1_out,B,A);
 and (g_2_out,A,C2,C1);
 nor #1 (ZN,g_1_out,g_2_out);
@@ -5737,6 +5855,8 @@ module aor211d1 (C2,C1,B,A,Z);
 
 output  Z;
 input   C2,C1,B,A;
+
+wire g_1_out,g_2_out;
 
 or (g_1_out,B,A,C1);
 or (g_2_out,B,A,C2);
@@ -5798,6 +5918,8 @@ module aor211d2 (C2,C1,B,A,Z);
 output  Z;
 input   C2,C1,B,A;
 
+wire g_1_out,g_2_out;
+
 or (g_1_out,B,A,C1);
 or (g_2_out,B,A,C2);
 and #1 (Z,g_1_out,g_2_out);
@@ -5857,6 +5979,8 @@ module aor211d4 (C2,C1,B,A,Z);
 
 output  Z;
 input   C2,C1,B,A;
+
+wire g_1_out,g_2_out;
 
 or (g_1_out,B,A,C1);
 or (g_2_out,B,A,C2);
@@ -5918,6 +6042,8 @@ module aor21d1 (B2,B1,A,Z);
 output  Z;
 input   B2,B1,A;
 
+wire g_1_out,g_2_out;
+
 and (g_1_out,B1,B2);
 or #1 (Z,g_1_out,A);
 
@@ -5975,6 +6101,8 @@ module aor21d2 (B2,B1,A,Z);
 
 output  Z;
 input   B2,B1,A;
+
+wire g_1_out;
 
 and (g_1_out,B1,B2);
 or #1 (Z,g_1_out,A);
@@ -6034,6 +6162,8 @@ module aor21d4 (B2,B1,A,Z);
 output  Z;
 input   B2,B1,A;
 
+wire g_1_out;
+
 and (g_1_out,B1,B2);
 or #1 (Z,g_1_out,A);
 
@@ -6091,6 +6221,8 @@ module aor221d1 (C2,C1,B2,B1,A,Z);
 
 output  Z;
 input   C2,C1,B2,B1,A;
+
+wire g_1_out,g_2_out;
 
 and (g_1_out,C1,C2);
 and (g_2_out,B2,B1);
@@ -6153,6 +6285,8 @@ module aor221d2 (C2,C1,B2,B1,A,Z);
 output  Z;
 input   C2,C1,B2,B1,A;
 
+wire g_1_out,g_2_out;
+
 and (g_1_out,C1,C2);
 and (g_2_out,B2,B1);
 or #1 (Z,g_1_out,g_2_out,A);
@@ -6214,6 +6348,8 @@ module aor221d4 (C2,C1,B2,B1,A,Z);
 output  Z;
 input   C2,C1,B2,B1,A;
 
+wire g_1_out,g_2_out;
+
 and (g_1_out,C1,C2);
 and (g_2_out,B2,B1);
 or #1 (Z,g_1_out,g_2_out,A);
@@ -6274,6 +6410,8 @@ module aor222d1 (C2,C1,B2,B1,A2,A1,Z);
 
 output  Z;
 input   C2,C1,B2,B1,A2,A1;
+
+wire g_1_out,g_2_out,g_3_out;
 
 and (g_1_out,C2,C1);
 and (g_2_out,B2,B1);
@@ -6339,6 +6477,8 @@ module aor222d2 (C2,C1,B2,B1,A2,A1,Z);
 output  Z;
 input   C2,C1,B2,B1,A2,A1;
 
+wire g_1_out,g_2_out,g_3_out;
+
 and (g_1_out,C2,C1);
 and (g_2_out,B2,B1);
 and (g_3_out,A2,A1);
@@ -6402,6 +6542,8 @@ module aor222d4 (C2,C1,B2,B1,A2,A1,Z);
 
 output  Z;
 input   C2,C1,B2,B1,A2,A1;
+
+wire g_1_out,g_2_out,g_3_out;
 
 and (g_1_out,C2,C1);
 and (g_2_out,B2,B1);
@@ -6467,6 +6609,8 @@ module aor22d1 (B2,B1,A2,A1,Z);
 output  Z;
 input   B2,B1,A2,A1;
 
+wire g_1_out,g_2_out;
+
 and (g_1_out,B2,B1);
 and (g_2_out,A2,A1);
 or #1 (Z,g_1_out,g_2_out);
@@ -6526,6 +6670,8 @@ module aor22d2 (B2,B1,A2,A1,Z);
 
 output  Z;
 input   B2,B1,A2,A1;
+
+wire g_1_out,g_2_out;
 
 and (g_1_out,B2,B1);
 and (g_2_out,A2,A1);
@@ -6587,6 +6733,8 @@ module aor22d4 (B2,B1,A2,A1,Z);
 output  Z;
 input   B2,B1,A2,A1;
 
+wire g_1_out,g_2_out;
+
 and (g_1_out,B2,B1);
 and (g_2_out,A2,A1);
 or #1 (Z,g_1_out,g_2_out);
@@ -6646,6 +6794,8 @@ module aor311d1 (C3,C2,C1,B,A,Z);
 
 output  Z;
 input   C3,C2,C1,B,A;
+
+wire g_1_out;
 
 and (g_1_out,C1,C3,C2);
 or #1 (Z,g_1_out,B,A);
@@ -6707,6 +6857,8 @@ module aor311d2 (C3,C2,C1,B,A,Z);
 output  Z;
 input   C3,C2,C1,B,A;
 
+wire g_1_out;
+
 and (g_1_out,C1,C3,C2);
 or #1 (Z,g_1_out,B,A);
 
@@ -6766,6 +6918,8 @@ module aor311d4 (C3,C2,C1,B,A,Z);
 
 output  Z;
 input   C3,C2,C1,B,A;
+
+wire g_1_out;
 
 and (g_1_out,C1,C3,C2);
 or #1 (Z,g_1_out,B,A);
@@ -6827,6 +6981,8 @@ module aor31d1 (B3,B2,B1,A,Z);
 output  Z;
 input   B3,B2,B1,A;
 
+wire g_1_out;
+
 and (g_1_out,B2,B1,B3);
 or #1 (Z,g_1_out,A);
 
@@ -6886,6 +7042,8 @@ module aor31d2 (B3,B2,B1,A,Z);
 output  Z;
 input   B3,B2,B1,A;
 
+wire g_1_out;
+
 and (g_1_out,B2,B1,B3);
 or #1 (Z,g_1_out,A);
 
@@ -6944,6 +7102,8 @@ module aor31d4 (B3,B2,B1,A,Z);
 
 output  Z;
 input   B3,B2,B1,A;
+
+wire g_1_out;
 
 and (g_1_out,B2,B1,B3);
 or #1 (Z,g_1_out,A);
@@ -8363,6 +8523,9 @@ endmodule
 module cload1 (I);
 
    input I;
+
+   wire DeadEnd;
+
    buf    E0(DeadEnd, I);
 
 endmodule
@@ -8406,6 +8569,8 @@ module decfq1 (CPN,CDN,D,ENN,Q);
 
 output  Q;
 input   CPN,CDN,D,ENN;
+
+wire CDN_buf,D_buf,ENN_buf;
 
 `ifdef neg_tchk
 wire d_CPN,d_CDN,d_D,d_ENN;
@@ -8516,6 +8681,8 @@ module decfq2 (CPN,CDN,D,ENN,Q);
 output  Q;
 input   CPN,CDN,D,ENN;
 
+wire CDN_buf,D_buf,ENN_buf;
+
 `ifdef neg_tchk
 wire d_CPN,d_CDN,d_D,d_ENN;
 `endif
@@ -8624,6 +8791,8 @@ module decfq4 (CPN,CDN,D,ENN,Q);
 
 output  Q;
 input   CPN,CDN,D,ENN;
+
+wire CDN_buf,D_buf,ENN_buf;
 
 `ifdef neg_tchk
 wire d_CPN,d_CDN,d_D,d_ENN;
@@ -8734,6 +8903,8 @@ module decrq1 (CP,CDN,D,ENN,Q);
 output  Q;
 input   CP,CDN,D,ENN;
 
+wire CDN_buf,D_buf,ENN_buf;
+
 `ifdef neg_tchk
 wire d_CP,d_CDN,d_D,d_ENN;
 `endif
@@ -8842,6 +9013,8 @@ module decrq2 (CP,CDN,D,ENN,Q);
 
 output  Q;
 input   CP,CDN,D,ENN;
+
+wire CDN_buf,D_buf,ENN_buf;
 
 `ifdef neg_tchk
 wire d_CP,d_CDN,d_D,d_ENN;
@@ -8952,6 +9125,8 @@ module decrq4 (CP,CDN,D,ENN,Q);
 output  Q;
 input   CP,CDN,D,ENN;
 
+wire CDN_buf,D_buf,ENN_buf;
+
 `ifdef neg_tchk
 wire d_CP,d_CDN,d_D,d_ENN;
 `endif
@@ -9061,6 +9236,8 @@ module denrq1 (CP,D,ENN,Q);
 output  Q;
 input   CP,D,ENN;
 
+wire D_buf,ENN_buf;
+
 `ifdef neg_tchk
 wire d_CP,d_D,d_ENN;
 `endif
@@ -9160,6 +9337,8 @@ module denrq2 (CP,D,ENN,Q);
 
 output  Q;
 input   CP,D,ENN;
+
+wire D_buf,ENN_buf;
 
 `ifdef neg_tchk
 wire d_CP,d_D,d_ENN;
@@ -9261,6 +9440,8 @@ module denrq4 (CP,D,ENN,Q);
 output  Q;
 input   CP,D,ENN;
 
+wire D_buf,ENN_buf;
+
 `ifdef neg_tchk
 wire d_CP,d_D,d_ENN;
 `endif
@@ -9360,6 +9541,8 @@ module depfq1 (CPN,SDN,D,ENN,Q);
 
 output  Q;
 input   CPN,SDN,D,ENN;
+
+wire SDN_buf,D_buf,ENN_buf;
 
 `ifdef neg_tchk
 wire d_CPN,d_SDN,d_D,d_ENN;
@@ -9470,6 +9653,8 @@ module depfq2 (CPN,SDN,D,ENN,Q);
 output  Q;
 input   CPN,SDN,D,ENN;
 
+wire SDN_buf,D_buf,ENN_buf;
+
 `ifdef neg_tchk
 wire d_CPN,d_SDN,d_D,d_ENN;
 `endif
@@ -9578,6 +9763,8 @@ module depfq4 (CPN,SDN,D,ENN,Q);
 
 output  Q;
 input   CPN,SDN,D,ENN;
+
+wire SDN_buf,D_buf,ENN_buf;
 
 `ifdef neg_tchk
 wire d_CPN,d_SDN,d_D,d_ENN;
@@ -9688,6 +9875,8 @@ module deprq1 (CP,SDN,D,ENN,Q);
 output  Q;
 input   CP,SDN,D,ENN;
 
+wire SDN_buf,D_buf,ENN_buf;
+
 `ifdef neg_tchk
 wire d_CP,d_SDN,d_D,d_ENN;
 `endif
@@ -9796,6 +9985,8 @@ module deprq2 (CP,SDN,D,ENN,Q);
 
 output  Q;
 input   CP,SDN,D,ENN;
+
+wire SDN_buf,D_buf,ENN_buf;
 
 `ifdef neg_tchk
 wire d_CP,d_SDN,d_D,d_ENN;
@@ -9906,6 +10097,8 @@ module deprq4 (CP,SDN,D,ENN,Q);
 output  Q;
 input   CP,SDN,D,ENN;
 
+wire SDN_buf,D_buf,ENN_buf;
+
 `ifdef neg_tchk
 wire d_CP,d_SDN,d_D,d_ENN;
 `endif
@@ -10014,6 +10207,8 @@ module dfbfb1 (D,CPN,SDN,CDN,Q,QN);
 
 output  Q,QN;
 input   D,CPN,SDN,CDN;
+
+wire not_SDN,not_CDN,SDN_buf,CDN_buf;
 
 `ifdef neg_tchk
 wire d_D,d_CPN,d_SDN,d_CDN;
@@ -10130,6 +10325,8 @@ module dfbfb2 (D,CPN,SDN,CDN,Q,QN);
 output  Q,QN;
 input   D,CPN,SDN,CDN;
 
+wire not_SDN,not_CDN,SDN_buf,CDN_buf;
+
 `ifdef neg_tchk
 wire d_D,d_CPN,d_SDN,d_CDN;
 `endif
@@ -10245,6 +10442,8 @@ module dfbfb4 (D,CPN,SDN,CDN,Q,QN);
 output  Q,QN;
 input   D,CPN,SDN,CDN;
 
+wire not_SDN,not_CDN,SDN_buf,CDN_buf;
+
 `ifdef neg_tchk
 wire d_D,d_CPN,d_SDN,d_CDN;
 `endif
@@ -10359,6 +10558,9 @@ module dfbrb1 (D,CP,SDN,CDN,Q,QN);
 
 output  Q,QN;
 input   D,CP,SDN,CDN;
+
+wire not_CP,not_CDN,not_SDN;
+wire SDN_buf,CDN_buf;
 
 `ifdef neg_tchk
 wire d_D,d_CP,d_SDN,d_CDN;
@@ -10484,6 +10686,8 @@ module dfbrb2 (D,CP,SDN,CDN,Q,QN);
 output  Q,QN;
 input   D,CP,SDN,CDN;
 
+wire not_CP,not_SDN,not_CDN,CDN_buf,SDN_buf;
+
 `ifdef neg_tchk
 wire d_D,d_CP,d_SDN,d_CDN;
 `endif
@@ -10607,6 +10811,8 @@ module dfbrb4 (D,CP,SDN,CDN,Q,QN);
 
 output  Q,QN;
 input   D,CP,SDN,CDN;
+
+wire not_CP,not_SDN,not_CDN,CDN_buf,SDN_buf;
 
 `ifdef neg_tchk
 wire d_D,d_CP,d_SDN,d_CDN;
@@ -10732,6 +10938,8 @@ module dfcfb1 (D,CPN,CDN,Q,QN);
 output  Q,QN;
 input   D,CPN,CDN;
 
+wire buf_Q;
+
 `ifdef neg_tchk
 wire d_D,d_CPN,d_CDN;
 `endif
@@ -10826,6 +11034,8 @@ module dfcfb2 (D,CPN,CDN,Q,QN);
 output  Q,QN;
 input   D,CPN,CDN;
 
+wire buf_Q;
+
 `ifdef neg_tchk
 wire d_D,d_CPN,d_CDN;
 `endif
@@ -10919,6 +11129,8 @@ module dfcfb4 (D,CPN,CDN,Q,QN);
 
 output  Q,QN;
 input   D,CPN,CDN;
+
+wire buf_Q;
 
 `ifdef neg_tchk
 wire d_D,d_CPN,d_CDN;
@@ -11280,6 +11492,8 @@ module dfcrb1 (D,CP,CDN,Q,QN);
 output  Q,QN;
 input   D,CP,CDN;
 
+wire buf_Q;
+
 `ifdef neg_tchk
 wire d_D,d_CP,d_CDN;
 `endif
@@ -11372,6 +11586,8 @@ module dfcrb2 (D,CP,CDN,Q,QN);
 
 output  Q,QN;
 input   D,CP,CDN;
+
+wire buf_Q;
 
 `ifdef neg_tchk
 wire d_D,d_CP,d_CDN;
@@ -11466,6 +11682,8 @@ module dfcrb4 (D,CP,CDN,Q,QN);
 output  Q,QN;
 input   D,CP,CDN;
 
+wire buf_Q;
+
 `ifdef neg_tchk
 wire d_D,d_CP,d_CDN;
 `endif
@@ -11559,6 +11777,8 @@ module dfcrn1 (D,CP,CDN,QN);
 output  QN;
 input   D,CP,CDN;
 
+wire QN_not;
+
 `ifdef neg_tchk
 wire d_D,d_CP,d_CDN;
 `endif
@@ -11648,6 +11868,8 @@ module dfcrn2 (D,CP,CDN,QN);
 output  QN;
 input   D,CP,CDN;
 
+wire QN_not;
+
 `ifdef neg_tchk
 wire d_D,d_CP,d_CDN;
 `endif
@@ -11736,6 +11958,8 @@ module dfcrn4 (D,CP,CDN,QN);
 
 output  QN;
 input   D,CP,CDN;
+
+wire QN_not;
 
 `ifdef neg_tchk
 wire d_D,d_CP,d_CDN;
@@ -12087,6 +12311,8 @@ module dfnfb1 (D,CPN,Q,QN);
 output  Q,QN;
 input   D,CPN;
 
+wire buf_Q;
+
 `ifdef neg_tchk
 wire d_CPN,d_D;
 `endif
@@ -12170,6 +12396,8 @@ module dfnfb2 (D,CPN,Q,QN);
 
 output  Q,QN;
 input   D,CPN;
+
+wire buf_Q;
 
 `ifdef neg_tchk
 wire d_CPN,d_D;
@@ -12255,6 +12483,8 @@ module dfnfb4 (D,CPN,Q,QN);
 output  Q,QN;
 input   D,CPN;
 
+wire buf_Q;
+
 `ifdef neg_tchk
 wire d_CPN,d_D;
 `endif
@@ -12338,6 +12568,8 @@ module dfnrb1 (D,CP,Q,QN);
 
 output  Q,QN;
 input   D,CP;
+
+wire buf_Q;
 
 `ifdef neg_tchk
 wire d_D,d_CP;
@@ -12423,6 +12655,8 @@ module dfnrb2 (D,CP,Q,QN);
 output  Q,QN;
 input   D,CP;
 
+wire buf_Q;
+
 `ifdef neg_tchk
 wire d_D,d_CP;
 `endif
@@ -12506,6 +12740,8 @@ module dfnrb4 (D,CP,Q,QN);
 
 output  Q,QN;
 input   D,CP;
+
+wire buf_Q;
 
 `ifdef neg_tchk
 wire d_D,d_CP;
@@ -12591,6 +12827,8 @@ module dfnrn1 (CP,D,QN);
 output  QN;
 input   CP,D;
 
+wire QN_not;
+
 `ifdef neg_tchk
 wire d_CP,d_D;
 `endif
@@ -12673,6 +12911,8 @@ module dfnrn2 (CP,D,QN);
 output  QN;
 input   CP,D;
 
+wire QN_not;
+
 `ifdef neg_tchk
 wire d_CP,d_D;
 `endif
@@ -12754,6 +12994,8 @@ module dfnrn4 (CP,D,QN);
 
 output  QN;
 input   CP,D;
+
+wire QN_not;
 
 `ifdef neg_tchk
 wire d_CP,d_D;
@@ -13077,6 +13319,8 @@ module dfpfb1 (D,CPN,SDN,Q,QN);
 output  Q,QN;
 input   D,CPN,SDN;
 
+wire buf_Q;
+
 `ifdef neg_tchk
 wire d_D,d_CPN,d_SDN;
 `endif
@@ -13170,6 +13414,8 @@ module dfpfb2 (D,CPN,SDN,Q,QN);
 
 output  Q,QN;
 input   D,CPN,SDN;
+
+wire buf_Q;
 
 `ifdef neg_tchk
 wire d_D,d_CPN,d_SDN;
@@ -13265,6 +13511,8 @@ module dfpfb4 (D,CPN,SDN,Q,QN);
 output  Q,QN;
 input   D,CPN,SDN;
 
+wire buf_Q;
+
 `ifdef neg_tchk
 wire d_D,d_CPN,d_SDN;
 `endif
@@ -13359,6 +13607,8 @@ module dfprb1 (D,CP,SDN,Q,QN);
 output  Q,QN;
 input   D,CP,SDN;
 
+wire buf_Q;
+
 `ifdef neg_tchk
 wire d_D,d_CP,d_SDN;
 `endif
@@ -13452,6 +13702,8 @@ module dfprb2 (D,CP,SDN,Q,QN);
 output  Q,QN;
 input   D,CP,SDN;
 
+wire buf_Q;
+
 `ifdef neg_tchk
 wire d_D,d_CP,d_SDN;
 `endif
@@ -13544,6 +13796,8 @@ module dfprb4 (D,CP,SDN,Q,QN);
 
 output  Q,QN;
 input   D,CP,SDN;
+
+wire buf_Q;
 
 `ifdef neg_tchk
 wire d_D,d_CP,d_SDN;
@@ -14295,6 +14549,8 @@ module gclfsn1 (EN,CLK,SE,GCLK);
 output  GCLK;
 input   EN,SE,CLK;
 
+wire init,init_2;
+
 `ifdef neg_tchk
 wire d_CLK,d_EN;
 `endif
@@ -14382,6 +14638,8 @@ module gclfsn2 (EN,CLK,SE,GCLK);
 
 output  GCLK;
 input   EN,SE,CLK;
+
+wire init,init_2;
 
 `ifdef neg_tchk
 wire d_CLK,d_EN;
@@ -14471,6 +14729,8 @@ module gclfsn4 (EN,CLK,SE,GCLK);
 output  GCLK;
 input   EN,SE,CLK;
 
+wire init,init_2;
+
 `ifdef neg_tchk
 wire d_CLK,d_EN;
 `endif
@@ -14558,6 +14818,8 @@ module gclfsn7 (EN,CLK,SE,GCLK);
 
 output  GCLK;
 input   EN,SE,CLK;
+
+wire init,init_2;
 
 `ifdef neg_tchk
 wire d_CLK,d_EN;
@@ -14647,6 +14909,8 @@ module gclfsna (EN,CLK,SE,GCLK);
 output  GCLK;
 input   EN,SE,CLK;
 
+wire init,init_2;
+
 `ifdef neg_tchk
 wire d_CLK,d_EN;
 `endif
@@ -14734,6 +14998,8 @@ module gclrsn1 (EN,CLK,SE,GCLK);
 
 output  GCLK;
 input   EN,SE,CLK;
+
+wire init,init_2,NOT_CLK;
 
 `ifdef neg_tchk
 wire d_CLK,d_EN;
@@ -14824,6 +15090,8 @@ module gclrsn2 (EN,CLK,SE,GCLK);
 output  GCLK;
 input   EN,SE,CLK;
 
+wire init,init_2,NOT_CLK;
+
 `ifdef neg_tchk
 wire d_CLK,d_EN;
 `endif
@@ -14912,6 +15180,8 @@ module gclrsn4 (EN,CLK,SE,GCLK);
 
 output  GCLK;
 input   EN,SE,CLK;
+
+wire init,init_2,NOT_CLK;
 
 `ifdef neg_tchk
 wire d_CLK,d_EN;
@@ -15002,6 +15272,8 @@ module gclrsn7 (EN,CLK,SE,GCLK);
 output  GCLK;
 input   EN,SE,CLK;
 
+wire init,init_2,NOT_CLK;
+
 `ifdef neg_tchk
 wire d_CLK,d_EN;
 `endif
@@ -15090,6 +15362,8 @@ module gclrsna (EN,CLK,SE,GCLK);
 
 output  GCLK;
 input   EN,SE,CLK;
+
+wire init,init_2,NOT_CLK;
 
 `ifdef neg_tchk
 wire d_CLK,d_EN;
@@ -16861,6 +17135,8 @@ module jkbrb1 (J,KZ,CP,Q,QN,SDN,CDN);
 
 output  Q,QN;
 input   J,KZ,CP,SDN,CDN;
+wire temp,not_temp,not_J,not_KZ,not_CP,not_CDN,not_SDN;
+wire SDN_buf,CDN_buf;
 
 `ifdef neg_tchk
 wire d_J,d_KZ,d_CP,d_SDN,d_CDN;
@@ -17001,6 +17277,8 @@ module jkbrb2 (J,KZ,CP,Q,QN,SDN,CDN);
 
 output  Q,QN;
 input   J,KZ,CP,SDN,CDN;
+wire temp,not_temp,not_J,not_KZ,not_CP,not_CDN,not_SDN;
+wire SDN_buf,CDN_buf;
 
 `ifdef neg_tchk
 wire d_J,d_KZ,d_CP,d_SDN,d_CDN;
@@ -17141,6 +17419,8 @@ module jkbrb4 (J,KZ,CP,Q,QN,SDN,CDN);
 
 output  Q,QN;
 input   J,KZ,CP,SDN,CDN;
+wire temp,not_temp,not_J,not_KZ,not_CP,not_CDN,not_SDN;
+wire SDN_buf,CDN_buf;
 
 `ifdef neg_tchk
 wire d_J,d_KZ,d_CP,d_SDN,d_CDN;
@@ -17283,6 +17563,8 @@ module labhb1 (E,D,CDN,SDN,Q,QN);
 output  Q,QN;
 input   E,D,CDN,SDN;
 
+wire SDN_buf,CDN_buf;
+
 `ifdef neg_tchk
 wire d_E,d_D,d_CDN,d_SDN;
 `endif
@@ -17400,6 +17682,9 @@ module labhb2 (E,D,CDN,SDN,Q,QN);
 output  Q,QN;
 input   E,D,CDN,SDN;
 
+
+wire SDN_buf,CDN_buf;
+
 `ifdef neg_tchk
 wire d_E,d_D,d_CDN,d_SDN;
 `endif
@@ -17516,6 +17801,9 @@ module labhb4 (E,D,CDN,SDN,Q,QN);
 
 output  Q,QN;
 input   E,D,CDN,SDN;
+
+
+wire SDN_buf,CDN_buf;
 
 `ifdef neg_tchk
 wire d_E,d_D,d_CDN,d_SDN;
@@ -17898,6 +18186,8 @@ module laclq1 (EN,D,CDN,Q);
 output  Q;
 input   EN,D,CDN;
 
+wire not_EN;
+
 `ifdef neg_tchk
 wire d_EN,d_D,d_CDN;
 `endif
@@ -17994,6 +18284,8 @@ module laclq2 (EN,D,CDN,Q);
 
 output  Q;
 input   EN,D,CDN;
+
+wire not_EN;
 
 `ifdef neg_tchk
 wire d_EN,d_D,d_CDN;
@@ -18092,6 +18384,8 @@ module laclq4 (EN,D,CDN,Q);
 output  Q;
 input   EN,D,CDN;
 
+wire not_EN;
+
 `ifdef neg_tchk
 wire d_EN,d_D,d_CDN;
 `endif
@@ -18189,6 +18483,8 @@ module lanhb1 (D,E,Q,QN);
 output  Q,QN;
 input   D,E;
 
+wire buf_Q;
+
 `ifdef neg_tchk
 wire d_D,d_E;
 `endif
@@ -18276,6 +18572,8 @@ module lanhb2 (D,E,Q,QN);
 
 output  Q,QN;
 input   D,E;
+
+wire buf_Q;
 
 `ifdef neg_tchk
 wire d_D,d_E;
@@ -18365,6 +18663,8 @@ module lanhb4 (D,E,Q,QN);
 output  Q,QN;
 input   D,E;
 
+wire buf_Q;
+
 `ifdef neg_tchk
 wire d_D,d_E;
 `endif
@@ -18453,6 +18753,7 @@ module lanhn1 (E,D,QN);
 output  QN;
 input   E,D;
 
+wire QN_not;
 
 `ifdef neg_tchk
 wire d_E,d_D;
@@ -18539,6 +18840,8 @@ module lanhn2 (E,D,QN);
 output  QN;
 input   E,D;
 
+wire QN_not;
+
 `ifdef neg_tchk
 wire d_E,d_D;
 `endif
@@ -18624,6 +18927,7 @@ module lanhn4 (E,D,QN);
 output  QN;
 input   E,D;
 
+wire QN_not;
 
 `ifdef neg_tchk
 wire d_E,d_D;
@@ -18955,6 +19259,8 @@ module lanht1 (D,E,OE,Z);
 output  Z;
 input   D,E,OE;
 
+wire D_buf,E_buf,OE_buf,Q;
+
 `ifdef neg_tchk
 wire d_D,d_E;
 `endif
@@ -19055,6 +19361,7 @@ module lanht2 (D,E,OE,Z);
 output  Z;
 input   D,E,OE;
 
+wire D_buf,E_buf,OE_buf,Q;
 
 `ifdef neg_tchk
 wire d_D,d_E;
@@ -19157,6 +19464,8 @@ module lanht4 (D,E,OE,Z);
 output  Z;
 input   D,E,OE;
 
+wire D_buf,E_buf,OE_buf,Q;
+
 `ifdef neg_tchk
 wire d_D,d_E;
 `endif
@@ -19256,6 +19565,8 @@ module lanlb1 (EN,D,Q,QN);
 output  Q,QN;
 input   EN,D;
 
+wire buf_Q;
+
 `ifdef neg_tchk
 wire d_EN,d_D;
 `endif
@@ -19343,6 +19654,8 @@ module lanlb2 (EN,D,Q,QN);
 
 output  Q,QN;
 input   EN,D;
+
+wire buf_Q;
 
 `ifdef neg_tchk
 wire d_EN,d_D;
@@ -19432,6 +19745,8 @@ module lanlb4 (EN,D,Q,QN);
 output  Q,QN;
 input   EN,D;
 
+wire buf_Q;
+
 `ifdef neg_tchk
 wire d_EN,d_D;
 `endif
@@ -19520,6 +19835,8 @@ module lanln1 (EN,D,QN);
 output  QN;
 input   EN,D;
 
+wire QN_not;
+
 `ifdef neg_tchk
 wire d_EN,d_D;
 `endif
@@ -19606,6 +19923,8 @@ module lanln2 (EN,D,QN);
 output  QN;
 input   EN,D;
 
+wire QN_not;
+
 `ifdef neg_tchk
 wire d_EN,d_D;
 `endif
@@ -19690,6 +20009,8 @@ module lanln4 (EN,D,QN);
 
 output  QN;
 input   EN,D;
+
+wire QN_not;
 
 `ifdef neg_tchk
 wire d_EN,d_D;
@@ -20020,6 +20341,8 @@ module mffnrb1 (CP,D,ENN,Q,QN);
 output  Q,QN;
 input   CP,D,ENN;
 
+wire D_buf,ENN_buf,buf_Q;
+
 `ifdef neg_tchk
 wire d_CP,d_D,d_ENN;
 `endif
@@ -20125,6 +20448,9 @@ module mffnrb2 (CP,D,ENN,Q,QN);
 output  Q,QN;
 input   CP,D,ENN;
 
+wire D_buf,ENN_buf,buf_Q;
+
+
 `ifdef neg_tchk
 wire d_CP,d_D,d_ENN;
 `endif
@@ -20229,6 +20555,8 @@ module mffnrb4 (CP,D,ENN,Q,QN);
 
 output  Q,QN;
 input   CP,D,ENN;
+
+wire D_buf,ENN_buf,buf_Q;
 
 `ifdef neg_tchk
 wire d_CP,d_D,d_ENN;
@@ -23611,6 +23939,18 @@ module mx08d1 (I0,I1,I2,I3,I4,I5,I6,I7,S0,S1,S2,Z);
 output  Z;
 input   I0,I1,I2,I3,I4,I5,I6,I7,S0,S1,S2;
 
+wire I0_buf;
+wire I1_buf;
+wire I2_buf;
+wire I3_buf;
+wire I4_buf;
+wire I5_buf;
+wire I6_buf;
+wire I7_buf;
+wire S0_buf;
+wire S1_buf;
+wire S2_buf;
+
 buf b_I0 (I0_buf,I0);
 buf b_I1 (I1_buf,I1);
 buf b_I2 (I2_buf,I2);
@@ -23774,6 +24114,18 @@ module mx08d2 (I0,I1,I2,I3,I4,I5,I6,I7,S0,S1,S2,Z);
 output  Z;
 input   I0,I1,I2,I3,I4,I5,I6,I7,S0,S1,S2;
 
+wire I0_buf;
+wire I1_buf;
+wire I2_buf;
+wire I3_buf;
+wire I4_buf;
+wire I5_buf;
+wire I6_buf;
+wire I7_buf;
+wire S0_buf;
+wire S1_buf;
+wire S2_buf;
+
 buf b_I0 (I0_buf,I0);
 buf b_I1 (I1_buf,I1);
 buf b_I2 (I2_buf,I2);
@@ -23936,6 +24288,18 @@ module mx08d4 (I0,I1,I2,I3,I4,I5,I6,I7,S0,S1,S2,Z);
 
 output  Z;
 input   I0,I1,I2,I3,I4,I5,I6,I7,S0,S1,S2;
+
+wire I0_buf;
+wire I1_buf;
+wire I2_buf;
+wire I3_buf;
+wire I4_buf;
+wire I5_buf;
+wire I6_buf;
+wire I7_buf;
+wire S0_buf;
+wire S1_buf;
+wire S2_buf;
 
 buf b_I0 (I0_buf,I0);
 buf b_I1 (I1_buf,I1);
@@ -25121,6 +25485,8 @@ module nd12d0 (A1,A2,ZN);
 output  ZN;
 input   A1,A2;
 
+wire not_A2;
+
 not (not_A2,A2);
 or #1 (ZN,not_A2,A1);
 
@@ -25176,6 +25542,8 @@ module nd12d1 (A1,A2,ZN);
 
 output  ZN;
 input   A1,A2;
+
+wire not_A2;
 
 not (not_A2,A2);
 or #1 (ZN,not_A2,A1);
@@ -25233,6 +25601,8 @@ module nd12d2 (A1,A2,ZN);
 output  ZN;
 input   A1,A2;
 
+wire not_A2;
+
 not (not_A2,A2);
 or #1 (ZN,not_A2,A1);
 
@@ -25289,6 +25659,8 @@ module nd12d4 (A1,A2,ZN);
 output  ZN;
 input   A1,A2;
 
+wire not_A2;
+
 not (not_A2,A2);
 or #1 (ZN,not_A2,A1);
 
@@ -25344,6 +25716,8 @@ module nd13d1 (A1,A2,A3,ZN);
 
 output  ZN;
 input   A1,A2,A3;
+
+wire not_A2,not_A3;
 
 not (not_A3,A3);
 not (not_A2,A2);
@@ -25404,6 +25778,8 @@ module nd13d2 (A1,A2,A3,ZN);
 output  ZN;
 input   A1,A2,A3;
 
+wire not_A2,not_A3;
+
 not (not_A3,A3);
 not (not_A2,A2);
 or #1 (ZN,not_A3,not_A2,A1);
@@ -25462,6 +25838,8 @@ module nd13d4 (A1,A2,A3,ZN);
 
 output  ZN;
 input   A1,A2,A3;
+
+wire not_A2,not_A3;
 
 not (not_A3,A3);
 not (not_A2,A2);
@@ -25522,6 +25900,8 @@ module nd23d1 (A1,A2,A3,ZN);
 output  ZN;
 input   A1,A2,A3;
 
+wire not_A3;
+
 not (not_A3,A3);
 or #1 (ZN,not_A3,A2,A1);
 
@@ -25580,6 +25960,8 @@ module nd23d2 (A1,A2,A3,ZN);
 output  ZN;
 input   A1,A2,A3;
 
+wire not_A3;
+
 not (not_A3,A3);
 or #1 (ZN,not_A3,A2,A1);
 
@@ -25637,6 +26019,8 @@ module nd23d4 (A1,A2,A3,ZN);
 
 output  ZN;
 input   A1,A2,A3;
+
+wire not_A3;
 
 not (not_A3,A3);
 or #1 (ZN,not_A3,A2,A1);
@@ -26716,6 +27100,8 @@ module nr13d1 (A1,A2,A3,ZN);
 output  ZN;
 input   A1,A2,A3;
 
+wire not_A2,not_A3;
+
 not (not_A3,A3);
 not (not_A2,A2);
 and #1 (ZN,not_A3,not_A2,A1);
@@ -26774,6 +27160,8 @@ module nr13d2 (A1,A2,A3,ZN);
 
 output  ZN;
 input   A1,A2,A3;
+
+wire not_A2,not_A3;
 
 not (not_A3,A3);
 not (not_A2,A2);
@@ -26834,6 +27222,8 @@ module nr13d4 (A1,A2,A3,ZN);
 output  ZN;
 input   A1,A2,A3;
 
+wire not_A2,not_A3;
+
 not (not_A3,A3);
 not (not_A2,A2);
 and #1 (ZN,not_A3,not_A2,A1);
@@ -26893,6 +27283,8 @@ module nr23d1 (A1,A2,A3,ZN);
 output  ZN;
 input   A1,A2,A3;
 
+wire not_A3;
+
 not (not_A3,A3);
 and #1 (ZN,not_A3,A2,A1);
 
@@ -26950,6 +27342,8 @@ module nr23d2 (A1,A2,A3,ZN);
 
 output  ZN;
 input   A1,A2,A3;
+
+wire not_A3;
 
 not (not_A3,A3);
 and #1 (ZN,not_A3,A2,A1);
@@ -27009,6 +27403,8 @@ module nr23d4 (A1,A2,A3,ZN);
 output  ZN;
 input   A1,A2,A3;
 
+wire not_A3;
+
 not (not_A3,A3);
 and #1 (ZN,not_A3,A2,A1);
 
@@ -27066,6 +27462,8 @@ module oai211d1 (C1,C2,A,B,ZN);
 
 output  ZN;
 input   C1,C2,A,B;
+
+wire g_1_out,g_2_out;
 
 and (g_1_out,B,A,C1);
 and (g_2_out,B,A,C2);
@@ -27127,6 +27525,8 @@ module oai211d2 (C1,C2,A,B,ZN);
 output  ZN;
 input   C1,C2,A,B;
 
+wire g_1_out,g_2_out;
+
 and (g_1_out,B,A,C1);
 and (g_2_out,B,A,C2);
 nor #1 (ZN,g_1_out,g_2_out);
@@ -27186,6 +27586,8 @@ module oai211d4 (C1,C2,A,B,ZN);
 
 output  ZN;
 input   C1,C2,A,B;
+
+wire g_1_out,g_2_out;
 
 and (g_1_out,B,A,C1);
 and (g_2_out,B,A,C2);
@@ -27247,6 +27649,8 @@ module oai21d1 (B1,B2,A,ZN);
 output  ZN;
 input   B1,B2,A;
 
+wire g_2_out;
+
 or (g_2_out,B1,B2);
 nand #1 (ZN,A,g_2_out);
 
@@ -27304,6 +27708,8 @@ module oai21d2 (B1,B2,A,ZN);
 
 output  ZN;
 input   B1,B2,A;
+
+wire g_2_out;
 
 or (g_2_out,B1,B2);
 nand #1 (ZN,A,g_2_out);
@@ -27363,6 +27769,8 @@ module oai21d4 (B1,B2,A,ZN);
 output  ZN;
 input   B1,B2,A;
 
+wire g_2_out;
+
 or (g_2_out,B1,B2);
 nand #1 (ZN,A,g_2_out);
 
@@ -27420,6 +27828,8 @@ module oai221d1 (C1,C2,B1,B2,A,ZN);
 
 output  ZN;
 input   C1,C2,B1,B2,A;
+
+wire g_3_out,g_2_out;
 
 or (g_2_out,C1,C2);
 or (g_3_out,B2,B1);
@@ -27482,6 +27892,8 @@ module oai221d2 (C1,C2,B1,B2,A,ZN);
 output  ZN;
 input   C1,C2,B1,B2,A;
 
+wire g_3_out,g_2_out;
+
 or (g_2_out,C1,C2);
 or (g_3_out,B2,B1);
 nand #1 (ZN,A,g_2_out,g_3_out);
@@ -27543,6 +27955,8 @@ module oai221d4 (C1,C2,B1,B2,A,ZN);
 output  ZN;
 input   C1,C2,B1,B2,A;
 
+wire g_3_out,g_2_out;
+
 or (g_2_out,C1,C2);
 or (g_3_out,B2,B1);
 nand #1 (ZN,A,g_2_out,g_3_out);
@@ -27603,6 +28017,8 @@ module oai2222d1 (A1,A2,B1,B2,C1,C2,D1,D2,ZN);
 
 output  ZN;
 input   A1,A2,B1,B2,C1,C2,D1,D2;
+
+wire g_3_out,g_2_out,g_1_out,g_4_out;
 
 or (g_1_out,D2,D1);
 or (g_2_out,B2,B1);
@@ -27672,6 +28088,8 @@ module oai2222d2 (A1,A2,B1,B2,C1,C2,D1,D2,ZN);
 output  ZN;
 input   A1,A2,B1,B2,C1,C2,D1,D2;
 
+wire g_3_out,g_2_out,g_1_out,g_4_out;
+
 or (g_1_out,D2,D1);
 or (g_2_out,B2,B1);
 or (g_3_out,A2,A1);
@@ -27739,6 +28157,8 @@ module oai2222d4 (A1,A2,B1,B2,C1,C2,D1,D2,ZN);
 
 output  ZN;
 input   A1,A2,B1,B2,C1,C2,D1,D2;
+
+wire g_3_out,g_2_out,g_1_out,g_4_out;
 
 or (g_1_out,D2,D1);
 or (g_2_out,B2,B1);
@@ -27808,6 +28228,8 @@ module oai222d1 (A1,A2,B1,B2,C1,C2,ZN);
 output  ZN;
 input   A1,A2,B1,B2,C1,C2;
 
+wire g_3_out,g_2_out,g_1_out;
+
 or (g_1_out,C2,C1);
 or (g_2_out,A2,A1);
 or (g_3_out,B2,B1);
@@ -27871,6 +28293,8 @@ module oai222d2 (A1,A2,B1,B2,C1,C2,ZN);
 
 output  ZN;
 input   A1,A2,B1,B2,C1,C2;
+
+wire g_3_out,g_2_out,g_1_out;
 
 or (g_1_out,C2,C1);
 or (g_2_out,A2,A1);
@@ -27936,6 +28360,8 @@ module oai222d4 (A1,A2,B1,B2,C1,C2,ZN);
 output  ZN;
 input   A1,A2,B1,B2,C1,C2;
 
+wire g_3_out,g_2_out,g_1_out;
+
 or (g_1_out,C2,C1);
 or (g_2_out,A2,A1);
 or (g_3_out,B2,B1);
@@ -28000,6 +28426,8 @@ module oai22d1 (A1,A2,B1,B2,ZN);
 output  ZN;
 input   A1,A2,B1,B2;
 
+wire g_2_out,g_1_out;
+
 or (g_1_out,B2,B1);
 or (g_2_out,A2,A1);
 nand #1 (ZN,g_1_out,g_2_out);
@@ -28059,6 +28487,8 @@ module oai22d2 (A1,A2,B1,B2,ZN);
 
 output  ZN;
 input   A1,A2,B1,B2;
+
+wire g_2_out,g_1_out;
 
 or (g_1_out,B2,B1);
 or (g_2_out,A2,A1);
@@ -28120,6 +28550,8 @@ module oai22d4 (A1,A2,B1,B2,ZN);
 output  ZN;
 input   A1,A2,B1,B2;
 
+wire g_2_out,g_1_out;
+
 or (g_1_out,B2,B1);
 or (g_2_out,A2,A1);
 nand #1 (ZN,g_1_out,g_2_out);
@@ -28179,6 +28611,8 @@ module oai311d1 (C3,C2,C1,B,A,ZN);
 
 output  ZN;
 input   C3,C2,C1,B,A;
+
+wire g_3_out;
 
 or (g_3_out,C1,C3,C2);
 nand #1 (ZN,B,A,g_3_out);
@@ -28240,6 +28674,8 @@ module oai311d2 (C3,C2,C1,B,A,ZN);
 output  ZN;
 input   C3,C2,C1,B,A;
 
+wire g_3_out;
+
 or (g_3_out,C1,C3,C2);
 nand #1 (ZN,B,A,g_3_out);
 
@@ -28299,6 +28735,8 @@ module oai311d4 (C3,C2,C1,B,A,ZN);
 
 output  ZN;
 input   C3,C2,C1,B,A;
+
+wire g_3_out;
 
 or (g_3_out,C1,C3,C2);
 nand #1 (ZN,B,A,g_3_out);
@@ -28360,6 +28798,8 @@ module oai31d1 (B3,B2,B1,A,ZN);
 output  ZN;
 input   B3,B2,B1,A;
 
+wire g_2_out;
+
 or (g_2_out,B2,B1,B3);
 nand #1 (ZN,A,g_2_out);
 
@@ -28418,6 +28858,8 @@ module oai31d2 (B3,B2,B1,A,ZN);
 
 output  ZN;
 input   B3,B2,B1,A;
+
+wire g_2_out;
 
 or (g_2_out,B2,B1,B3);
 nand #1 (ZN,A,g_2_out);
@@ -28478,6 +28920,8 @@ module oai31d4 (B3,B2,B1,A,ZN);
 output  ZN;
 input   B3,B2,B1,A;
 
+wire g_2_out;
+
 or (g_2_out,B2,B1,B3);
 nand #1 (ZN,A,g_2_out);
 
@@ -28536,6 +28980,8 @@ module oai321d1 (C3,C2,C1,B2,B1,A,ZN);
 
 output  ZN;
 input   C3,C2,C1,B2,B1,A;
+
+wire g_2_out,g_3_out;
 
 or (g_2_out,C3,C2,C1);
 or (g_3_out,B1,B2);
@@ -28600,6 +29046,8 @@ module oai321d2 (C3,C2,C1,B2,B1,A,ZN);
 output  ZN;
 input   C3,C2,C1,B2,B1,A;
 
+wire g_2_out,g_3_out;
+
 or (g_2_out,C3,C2,C1);
 or (g_3_out,B1,B2);
 nand #1 (ZN,A,g_2_out,g_3_out);
@@ -28663,6 +29111,8 @@ module oai321d4 (C3,C2,C1,B2,B1,A,ZN);
 output  ZN;
 input   C3,C2,C1,B2,B1,A;
 
+wire g_2_out,g_3_out;
+
 or (g_2_out,C3,C2,C1);
 or (g_3_out,B1,B2);
 nand #1 (ZN,A,g_2_out,g_3_out);
@@ -28725,6 +29175,8 @@ module oai322d1 (C3,C2,C1,B2,B1,A2,A1,ZN);
 
 output  ZN;
 input   C3,C2,C1,B2,B1,A2,A1;
+
+wire g_2_out,g_3_out,g_1_out;
 
 or (g_1_out,B2,B1);
 or (g_2_out,A2,A1);
@@ -28791,6 +29243,8 @@ module oai322d2 (C3,C2,C1,B2,B1,A2,A1,ZN);
 output  ZN;
 input   C3,C2,C1,B2,B1,A2,A1;
 
+wire g_2_out,g_3_out,g_1_out;
+
 or (g_1_out,B2,B1);
 or (g_2_out,A2,A1);
 or (g_3_out,C2,C1,C3);
@@ -28855,6 +29309,8 @@ module oai322d4 (C3,C2,C1,B2,B1,A2,A1,ZN);
 
 output  ZN;
 input   C3,C2,C1,B2,B1,A2,A1;
+
+wire g_2_out,g_3_out,g_1_out;
 
 or (g_1_out,B2,B1);
 or (g_2_out,A2,A1);
@@ -28921,6 +29377,8 @@ module oaim211d1 (C2,C1,B,A,ZN);
 output  ZN;
 input   C2,C1,B,A;
 
+wire A_buf,B_buf,C1_buf,C2_buf;
+
 buf (C2_buf,C2);
 buf (C1_buf,C1);
 buf (B_buf,B);
@@ -28985,6 +29443,8 @@ module oaim211d2 (C2,C1,B,A,ZN);
 
 output  ZN;
 input   C2,C1,B,A;
+
+wire A_buf,B_buf,C1_buf,C2_buf;
 
 buf (C2_buf,C2);
 buf (C1_buf,C1);
@@ -29051,6 +29511,8 @@ module oaim211d4 (C2,C1,B,A,ZN);
 output  ZN;
 input   C2,C1,B,A;
 
+wire A_buf,B_buf,C1_buf,C2_buf;
+
 buf (C2_buf,C2);
 buf (C1_buf,C1);
 buf (B_buf,B);
@@ -29116,6 +29578,8 @@ module oaim21d1 (B2,B1,A,ZN);
 output  ZN;
 input   B2,B1,A;
 
+wire A_buf,B1_buf,B2_buf;
+
 buf (B2_buf,B2);
 buf (B1_buf,B1);
 buf (A_buf,A);
@@ -29178,6 +29642,8 @@ module oaim21d2 (B2,B1,A,ZN);
 
 output  ZN;
 input   B2,B1,A;
+
+wire A_buf,B1_buf,B2_buf;
 
 buf (B2_buf,B2);
 buf (B1_buf,B1);
@@ -29242,6 +29708,8 @@ module oaim21d4 (B2,B1,A,ZN);
 output  ZN;
 input   B2,B1,A;
 
+wire A_buf,B1_buf,B2_buf;
+
 buf (B2_buf,B2);
 buf (B1_buf,B1);
 buf (A_buf,A);
@@ -29304,6 +29772,8 @@ module oaim22d1 (B2,B1,A2,A1,ZN);
 
 output  ZN;
 input   B2,B1,A2,A1;
+
+wire A1_buf,B1_buf,B2_buf,A2_buf;
 
 buf (B2_buf,B2);
 buf (B1_buf,B1);
@@ -29370,6 +29840,8 @@ module oaim22d2 (B2,B1,A2,A1,ZN);
 output  ZN;
 input   B2,B1,A2,A1;
 
+wire A1_buf,B1_buf,B2_buf,A2_buf;
+
 buf (B2_buf,B2);
 buf (B1_buf,B1);
 buf (A2_buf,A2);
@@ -29434,6 +29906,8 @@ module oaim22d4 (B2,B1,A2,A1,ZN);
 
 output  ZN;
 input   B2,B1,A2,A1;
+
+wire A1_buf,B1_buf,B2_buf,A2_buf;
 
 buf (B2_buf,B2);
 buf (B1_buf,B1);
@@ -29500,6 +29974,8 @@ module oaim2m11d1 (C2,C1,B,A,ZN);
 output  ZN;
 input   C2,C1,B,A;
 
+wire A_buf,B_buf,C2_buf,C1_buf;
+
 buf (C2_buf,C2);
 buf (C1_buf,C1);
 buf (B_buf,B);
@@ -29564,6 +30040,8 @@ module oaim2m11d2 (C2,C1,B,A,ZN);
 
 output  ZN;
 input   C2,C1,B,A;
+
+wire A_buf,B_buf,C2_buf,C1_buf;
 
 buf (C2_buf,C2);
 buf (C1_buf,C1);
@@ -29630,6 +30108,8 @@ module oaim2m11d4 (C2,C1,B,A,ZN);
 output  ZN;
 input   C2,C1,B,A;
 
+wire A_buf,B_buf,C2_buf,C1_buf;
+
 buf (C2_buf,C2);
 buf (C1_buf,C1);
 buf (B_buf,B);
@@ -29694,6 +30174,8 @@ module oaim311d1 (C3,C2,C1,B,A,ZN);
 
 output  ZN;
 input   C3,C2,C1,B,A;
+
+wire A_buf,B_buf,C2_buf,C1_buf,C3_buf;
 
 buf (C3_buf,C3);
 buf (C2_buf,C2);
@@ -29762,6 +30244,8 @@ module oaim311d2 (C3,C2,C1,B,A,ZN);
 output  ZN;
 input   C3,C2,C1,B,A;
 
+wire A_buf,B_buf,C2_buf,C1_buf,C3_buf;
+
 buf (C3_buf,C3);
 buf (C2_buf,C2);
 buf (C1_buf,C1);
@@ -29828,6 +30312,8 @@ module oaim311d4 (C3,C2,C1,B,A,ZN);
 
 output  ZN;
 input   C3,C2,C1,B,A;
+
+wire A_buf,B_buf,C2_buf,C1_buf,C3_buf;
 
 buf (C3_buf,C3);
 buf (C2_buf,C2);
@@ -29896,6 +30382,8 @@ module oaim31d1 (B3,B2,B1,A,ZN);
 output  ZN;
 input   B3,B2,B1,A;
 
+wire A_buf,B1_buf,B2_buf,B3_buf;
+
 buf (B3_buf,B3);
 buf (B2_buf,B2);
 buf (B1_buf,B1);
@@ -29960,6 +30448,8 @@ module oaim31d2 (B3,B2,B1,A,ZN);
 
 output  ZN;
 input   B3,B2,B1,A;
+
+wire A_buf,B1_buf,B2_buf,B3_buf;
 
 buf (B3_buf,B3);
 buf (B2_buf,B2);
@@ -30026,6 +30516,8 @@ module oaim31d4 (B3,B2,B1,A,ZN);
 output  ZN;
 input   B3,B2,B1,A;
 
+wire A_buf,B1_buf,B2_buf,B3_buf;
+
 buf (B3_buf,B3);
 buf (B2_buf,B2);
 buf (B1_buf,B1);
@@ -30090,6 +30582,8 @@ module oaim3m11d1 (C3,C2,C1,B,A,ZN);
 
 output  ZN;
 input   C3,C2,C1,B,A;
+
+wire A_buf,B_buf,C1_buf,C2_buf,C3_buf;
 
 buf (C3_buf,C3);
 buf (C2_buf,C2);
@@ -30158,6 +30652,8 @@ module oaim3m11d2 (C3,C2,C1,B,A,ZN);
 output  ZN;
 input   C3,C2,C1,B,A;
 
+wire A_buf,B_buf,C1_buf,C2_buf,C3_buf;
+
 buf (C3_buf,C3);
 buf (C2_buf,C2);
 buf (C1_buf,C1);
@@ -30224,6 +30720,8 @@ module oaim3m11d4 (C3,C2,C1,B,A,ZN);
 
 output  ZN;
 input   C3,C2,C1,B,A;
+
+wire A_buf,B_buf,C1_buf,C2_buf,C3_buf;
 
 buf (C3_buf,C3);
 buf (C2_buf,C2);
@@ -30292,6 +30790,8 @@ module oan211d1 (C2,C1,B,A,ZN);
 output  ZN;
 input   C2,C1,B,A;
 
+wire g_1_out,g_2_out;
+
 or (g_1_out,B,A);
 or (g_2_out,A,C2,C1);
 nand #1 (ZN,g_1_out,g_2_out);
@@ -30352,6 +30852,8 @@ module oan211d2 (C2,C1,B,A,ZN);
 output  ZN;
 input   C2,C1,B,A;
 
+wire g_1_out,g_2_out;
+
 or (g_1_out,B,A);
 or (g_2_out,A,C2,C1);
 nand #1 (ZN,g_1_out,g_2_out);
@@ -30411,6 +30913,8 @@ module oan211d4 (C2,C1,B,A,ZN);
 
 output  ZN;
 input   C2,C1,B,A;
+
+wire g_1_out,g_2_out;
 
 or (g_1_out,B,A);
 or (g_2_out,A,C2,C1);
@@ -31492,6 +31996,8 @@ module ora211d1 (C2,C1,B,A,Z);
 output  Z;
 input   C2,C1,B,A;
 
+wire g_1_out,g_2_out;
+
 and (g_1_out,B,A,C2);
 and (g_2_out,B,A,C1);
 or #1 (Z,g_1_out,g_2_out);
@@ -31551,6 +32057,8 @@ module ora211d2 (C2,C1,B,A,Z);
 
 output  Z;
 input   C2,C1,B,A;
+
+wire g_1_out,g_2_out;
 
 and (g_1_out,B,A,C2);
 and (g_2_out,B,A,C1);
@@ -31612,6 +32120,8 @@ module ora211d4 (C2,C1,B,A,Z);
 output  Z;
 input   C2,C1,B,A;
 
+wire g_1_out,g_2_out;
+
 and (g_1_out,B,A,C2);
 and (g_2_out,B,A,C1);
 or #1 (Z,g_1_out,g_2_out);
@@ -31672,6 +32182,8 @@ module ora21d1 (B2,B1,A,Z);
 output  Z;
 input   B2,B1,A;
 
+wire g_2_out;
+
 or (g_2_out,B1,B2);
 and #1 (Z,A,g_2_out);
 
@@ -31729,6 +32241,8 @@ module ora21d2 (B2,B1,A,Z);
 
 output  Z;
 input   B2,B1,A;
+
+wire g_2_out;
 
 or (g_2_out,B1,B2);
 and #1 (Z,A,g_2_out);
@@ -31788,6 +32302,8 @@ module ora21d4 (B2,B1,A,Z);
 output  Z;
 input   B2,B1,A;
 
+wire g_2_out;
+
 or (g_2_out,B1,B2);
 and #1 (Z,A,g_2_out);
 
@@ -31845,6 +32361,8 @@ module ora311d1 (C3,C2,C1,B,A,Z);
 
 output  Z;
 input   C3,C2,C1,B,A;
+
+wire g_3_out;
 
 or (g_3_out,C1,C3,C2);
 and #1 (Z,B,A,g_3_out);
@@ -31906,6 +32424,8 @@ module ora311d2 (C3,C2,C1,B,A,Z);
 output  Z;
 input   C3,C2,C1,B,A;
 
+wire g_3_out;
+
 or (g_3_out,C1,C3,C2);
 and #1 (Z,B,A,g_3_out);
 
@@ -31965,6 +32485,8 @@ module ora311d4 (C3,C2,C1,B,A,Z);
 
 output  Z;
 input   C3,C2,C1,B,A;
+
+wire g_3_out;
 
 or (g_3_out,C1,C3,C2);
 and #1 (Z,B,A,g_3_out);
@@ -32026,6 +32548,8 @@ module ora31d1 (B3,B2,B1,A,Z);
 output  Z;
 input   B3,B2,B1,A;
 
+wire g_2_out;
+
 or (g_2_out,B2,B1,B3);
 and #1 (Z,A,g_2_out);
 
@@ -32084,6 +32608,8 @@ module ora31d2 (B3,B2,B1,A,Z);
 
 output  Z;
 input   B3,B2,B1,A;
+
+wire g_2_out;
 
 or (g_2_out,B2,B1,B3);
 and #1 (Z,A,g_2_out);
@@ -32144,6 +32670,8 @@ module ora31d4 (B3,B2,B1,A,Z);
 output  Z;
 input   B3,B2,B1,A;
 
+wire g_2_out;
+
 or (g_2_out,B2,B1,B3);
 and #1 (Z,A,g_2_out);
 
@@ -32202,6 +32730,9 @@ module sdbfb1 (D,SD,SC,CPN,SDN,CDN,Q,QN);
 
 output  Q,QN;
 input   D,SD,SC,CPN,SDN,CDN;
+
+wire mux_out,not_CDN,not_SDN;
+wire SC_buf,SDN_buf,CDN_buf;
 
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_CPN,d_SDN,d_CDN;
@@ -32345,6 +32876,9 @@ module sdbfb2 (D,SD,SC,CPN,SDN,CDN,Q,QN);
 output  Q,QN;
 input   D,SD,SC,CPN,SDN,CDN;
 
+wire mux_out,not_CDN,not_SDN;
+wire SC_buf,SDN_buf,CDN_buf;
+
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_CPN,d_SDN,d_CDN;
 `endif
@@ -32487,6 +33021,9 @@ module sdbfb4 (D,SD,SC,CPN,SDN,CDN,Q,QN);
 output  Q,QN;
 input   D,SD,SC,CPN,SDN,CDN;
 
+wire mux_out,not_CDN,not_SDN;
+wire SC_buf,SDN_buf,CDN_buf;
+
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_CPN,d_SDN,d_CDN;
 `endif
@@ -32628,6 +33165,9 @@ module sdbrb1 (D,SD,SC,CP,SDN,CDN,Q,QN);
 
 output  Q,QN;
 input   D,SD,SC,CP,SDN,CDN;
+
+wire mux_out,not_CDN,not_SDN;
+wire SC_buf,SDN_buf,CDN_buf,not_CP;
 
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_CP,d_SDN,d_CDN;
@@ -32774,6 +33314,9 @@ module sdbrb2 (D,SD,SC,CP,SDN,CDN,Q,QN);
 output  Q,QN;
 input   D,SD,SC,CP,SDN,CDN;
 
+wire mux_out,not_CDN,not_SDN;
+wire SC_buf,SDN_buf,CDN_buf,not_CP;
+
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_CP,d_SDN,d_CDN;
 `endif
@@ -32917,6 +33460,9 @@ module sdbrb4 (D,SD,SC,CP,SDN,CDN,Q,QN);
 
 output  Q,QN;
 input   D,SD,SC,CP,SDN,CDN;
+
+wire mux_out,not_CDN,not_SDN;
+wire SC_buf,SDN_buf,CDN_buf,not_CP;
 
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_CP,d_SDN,d_CDN;
@@ -33063,6 +33609,8 @@ module sdcfb1 (D,SD,SC,CPN,CDN,Q,QN);
 output  Q,QN;
 input   D,SD,SC,CPN,CDN;
  
+ wire buf_Q,mux_out,SC_buf,CDN_buf;
+
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_CPN,d_CDN;
 `endif
@@ -33192,6 +33740,8 @@ module sdcfb2 (D,SD,SC,CPN,CDN,Q,QN);
 output  Q,QN;
 input   D,SD,SC,CPN,CDN;
  
+wire buf_Q,mux_out,SC_buf,CDN_buf;
+
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_CPN,d_CDN;
 `endif
@@ -33320,7 +33870,9 @@ module sdcfb4 (D,SD,SC,CPN,CDN,Q,QN);
 
 output  Q,QN;
 input   D,SD,SC,CPN,CDN;
- 
+
+wire buf_Q,mux_out,SC_buf,CDN_buf;
+
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_CPN,d_CDN;
 `endif
@@ -33450,6 +34002,8 @@ module sdcfq1 (CPN,CDN,D,SC,SD,Q);
 output  Q;
 input   CPN,CDN,D,SC,SD;
 
+wire buf_Q,mux_out,SC_buf,CDN_buf;
+
 `ifdef neg_tchk
 wire d_CPN,d_CDN,d_D,d_SC,d_SD;
 `endif
@@ -33571,6 +34125,8 @@ module sdcfq2 (CPN,CDN,D,SC,SD,Q);
 
 output  Q;
 input   CPN,CDN,D,SC,SD;
+
+wire buf_Q,mux_out,SC_buf,CDN_buf;
 
 `ifdef neg_tchk
 wire d_CPN,d_CDN,d_D,d_SC,d_SD;
@@ -33694,6 +34250,8 @@ module sdcfq4 (CPN,CDN,D,SC,SD,Q);
 output  Q;
 input   CPN,CDN,D,SC,SD;
 
+wire buf_Q,mux_out,SC_buf,CDN_buf;
+
 `ifdef neg_tchk
 wire d_CPN,d_CDN,d_D,d_SC,d_SD;
 `endif
@@ -33816,6 +34374,8 @@ module sdcrb1 (D,SD,SC,CP,CDN,Q,QN);
 output  Q,QN;
 input   D,SD,SC,CP,CDN;
  
+ wire buf_Q,mux_out,SC_buf,CDN_buf;
+
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_CP,d_CDN;
 `endif
@@ -33944,6 +34504,8 @@ module sdcrb2 (D,SD,SC,CP,CDN,Q,QN);
 output  Q,QN;
 input   D,SD,SC,CP,CDN;
  
+ wire buf_Q,mux_out,SC_buf,CDN_buf;
+
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_CP,d_CDN;
 `endif
@@ -34072,6 +34634,8 @@ module sdcrb4 (D,SD,SC,CP,CDN,Q,QN);
 output  Q,QN;
 input   D,SD,SC,CP,CDN;
  
+ wire buf_Q,mux_out,SC_buf,CDN_buf;
+
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_CP,d_CDN;
 `endif
@@ -34199,6 +34763,8 @@ module sdcrn1 (CP,CDN,D,SC,SD,QN);
 output  QN;
 input   CP,CDN,D,SC,SD;
 
+wire buf_Q,mux_out,SC_buf,CDN_buf,QN_not;
+
 `ifdef neg_tchk
 wire d_CP,d_CDN,d_D,d_SC,d_SD;
 `endif
@@ -34321,6 +34887,8 @@ module sdcrn2 (CP,CDN,D,SC,SD,QN);
 
 output  QN;
 input   CP,CDN,D,SC,SD;
+
+wire buf_Q,mux_out,SC_buf,CDN_buf,QN_not;
 
 `ifdef neg_tchk
 wire d_CP,d_CDN,d_D,d_SC,d_SD;
@@ -34446,6 +35014,8 @@ module sdcrn4 (CP,CDN,D,SC,SD,QN);
 output  QN;
 input   CP,CDN,D,SC,SD;
 
+wire buf_Q,mux_out,SC_buf,CDN_buf,QN_not;
+
 `ifdef neg_tchk
 wire d_CP,d_CDN,d_D,d_SC,d_SD;
 `endif
@@ -34570,6 +35140,8 @@ module sdcrq1 (CP,CDN,D,SC,SD,Q);
 output  Q;
 input   CP,CDN,D,SC,SD;
 
+wire buf_Q,mux_out,SC_buf,CDN_buf,QN_not;
+
 `ifdef neg_tchk
 wire d_CP,d_CDN,d_D,d_SC,d_SD;
 `endif
@@ -34689,6 +35261,8 @@ module sdcrq2 (CP,CDN,D,SC,SD,Q);
 
 output  Q;
 input   CP,CDN,D,SC,SD;
+
+wire buf_Q,mux_out,SC_buf,CDN_buf,QN_not;
 
 `ifdef neg_tchk
 wire d_CP,d_CDN,d_D,d_SC,d_SD;
@@ -34810,6 +35384,8 @@ module sdcrq4 (CP,CDN,D,SC,SD,Q);
 output  Q;
 input   CP,CDN,D,SC,SD;
 
+wire buf_Q,mux_out,SC_buf,CDN_buf,QN_not;
+
 `ifdef neg_tchk
 wire d_CP,d_CDN,d_D,d_SC,d_SD;
 `endif
@@ -34930,6 +35506,8 @@ module sdnfb1 (D,SD,SC,CPN,Q,QN);
 output  Q,QN;
 input   D,SD,SC,CPN;
 
+wire buf_Q,mux_out,SC_buf,CDN_buf,QN_not;
+
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_CPN;
 `endif
@@ -35037,6 +35615,8 @@ module sdnfb2 (D,SD,SC,CPN,Q,QN);
 
 output  Q,QN;
 input   D,SD,SC,CPN;
+
+wire buf_Q,mux_out,SC_buf,CDN_buf,QN_not;
 
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_CPN;
@@ -35146,6 +35726,8 @@ module sdnfb4 (D,SD,SC,CPN,Q,QN);
 output  Q,QN;
 input   D,SD,SC,CPN;
 
+wire buf_Q,mux_out,SC_buf,CDN_buf,QN_not;
+
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_CPN;
 `endif
@@ -35253,6 +35835,8 @@ module sdnrb1 (D,SD,SC,CP,Q,QN);
 
 output  Q,QN;
 input   D,SD,SC,CP;
+
+wire buf_Q,mux_out,SC_buf,CDN_buf,QN_not;
 
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_CP;
@@ -35362,6 +35946,8 @@ module sdnrb2 (D,SD,SC,CP,Q,QN);
 output  Q,QN;
 input   D,SD,SC,CP;
 
+wire buf_Q,mux_out,SC_buf,CDN_buf,QN_not;
+
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_CP;
 `endif
@@ -35469,6 +36055,8 @@ module sdnrb4 (D,SD,SC,CP,Q,QN);
 
 output  Q,QN;
 input   D,SD,SC,CP;
+
+wire buf_Q,mux_out,SC_buf,CDN_buf,QN_not;
 
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_CP;
@@ -35578,6 +36166,8 @@ module sdnrn1 (CP,D,SC,SD,QN);
 output  QN;
 input   CP,D,SC,SD;
 
+wire buf_Q,mux_out,SC_buf,CDN_buf,QN_not;
+
 `ifdef neg_tchk
 wire d_CP,d_D,d_SC,d_SD;
 `endif
@@ -35683,6 +36273,8 @@ module sdnrn2 (CP,D,SC,SD,QN);
 
 output  QN;
 input   CP,D,SC,SD;
+
+wire buf_Q,mux_out,SC_buf,CDN_buf,QN_not;
 
 `ifdef neg_tchk
 wire d_CP,d_D,d_SC,d_SD;
@@ -35790,6 +36382,8 @@ module sdnrn4 (CP,D,SC,SD,QN);
 output  QN;
 input   CP,D,SC,SD;
 
+wire buf_Q,mux_out,SC_buf,CDN_buf,QN_not;
+
 `ifdef neg_tchk
 wire d_CP,d_D,d_SC,d_SD;
 `endif
@@ -35896,6 +36490,8 @@ module sdnrq1 (CP,D,SC,SD,Q);
 output  Q;
 input   CP,D,SC,SD;
 
+wire buf_Q,mux_out,SC_buf,CDN_buf,QN_not;
+
 `ifdef neg_tchk
 wire d_CP,d_D,d_SC,d_SD;
 `endif
@@ -35999,6 +36595,8 @@ module sdnrq2 (CP,D,SC,SD,Q);
 
 output  Q;
 input   CP,D,SC,SD;
+
+wire buf_Q,mux_out,SC_buf,CDN_buf,QN_not;
 
 `ifdef neg_tchk
 wire d_CP,d_D,d_SC,d_SD;
@@ -36104,6 +36702,8 @@ module sdnrq4 (CP,D,SC,SD,Q);
 output  Q;
 input   CP,D,SC,SD;
 
+wire buf_Q,mux_out,SC_buf,CDN_buf,QN_not;
+
 `ifdef neg_tchk
 wire d_CP,d_D,d_SC,d_SD;
 `endif
@@ -36207,6 +36807,8 @@ module sdpfb1 (D,SD,SC,CPN,SDN,Q,QN);
 
 output  Q,QN;
 input   D,SD,SC,CPN,SDN;
+
+wire buf_Q,mux_out,SC_buf,CDN_buf,QN_not,SDN_buf;
 
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_CPN,d_SDN;
@@ -36337,6 +36939,8 @@ module sdpfb2 (D,SD,SC,CPN,SDN,Q,QN);
 output  Q,QN;
 input   D,SD,SC,CPN,SDN;
 
+wire buf_Q,mux_out,SC_buf,CDN_buf,QN_not,SDN_buf;
+
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_CPN,d_SDN;
 `endif
@@ -36465,6 +37069,8 @@ module sdpfb4 (D,SD,SC,CPN,SDN,Q,QN);
 
 output  Q,QN;
 input   D,SD,SC,CPN,SDN;
+
+wire buf_Q,mux_out,SC_buf,CDN_buf,QN_not,SDN_buf;
 
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_CPN,d_SDN;
@@ -36595,6 +37201,8 @@ module sdprb1 (D,SD,SC,CP,SDN,Q,QN);
 output  Q,QN;
 input   D,SD,SC,CP,SDN;
 
+wire buf_Q,mux_out,SC_buf,CDN_buf,QN_not,SDN_buf;
+
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_CP,d_SDN;
 `endif
@@ -36723,6 +37331,8 @@ module sdprb2 (D,SD,SC,CP,SDN,Q,QN);
 output  Q,QN;
 input   D,SD,SC,CP,SDN;
 
+wire buf_Q,mux_out,SC_buf,CDN_buf,QN_not,SDN_buf;
+
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_CP,d_SDN;
 `endif
@@ -36850,6 +37460,8 @@ module sdprb4 (D,SD,SC,CP,SDN,Q,QN);
 
 output  Q,QN;
 input   D,SD,SC,CP,SDN;
+
+wire buf_Q,mux_out,SC_buf,CDN_buf,QN_not,SDN_buf;
 
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_CP,d_SDN;
@@ -36981,6 +37593,8 @@ module secfq1 (CPN,CDN,ENN,D,SC,SD,Q);
 output  Q;
 input   CPN,CDN,ENN,D,SC,SD;
 
+wire not_CDN,CDN_buf,SC_buf,ENN_buf,not_CPN;
+
 `ifdef neg_tchk
 wire d_CPN,d_CDN,d_ENN,d_D,d_SC,d_SD;
 `endif
@@ -37106,6 +37720,8 @@ module secfq2 (CPN,CDN,ENN,D,SC,SD,Q);
 
 output  Q;
 input   CPN,CDN,ENN,D,SC,SD;
+
+wire not_CDN,CDN_buf,SC_buf,ENN_buf,not_CPN;
 
 `ifdef neg_tchk
 wire d_CPN,d_CDN,d_ENN,d_D,d_SC,d_SD;
@@ -37234,6 +37850,8 @@ module secfq4 (CPN,CDN,ENN,D,SC,SD,Q);
 output  Q;
 input   CPN,CDN,ENN,D,SC,SD;
 
+wire not_CDN,CDN_buf,SC_buf,ENN_buf,not_CPN;
+
 `ifdef neg_tchk
 wire d_CPN,d_CDN,d_ENN,d_D,d_SC,d_SD;
 `endif
@@ -37361,6 +37979,8 @@ module secrq1 (CP,CDN,ENN,D,SC,SD,Q);
 output  Q;
 input   CP,CDN,ENN,D,SC,SD;
 
+wire not_CDN,CDN_buf,SC_buf,ENN_buf,not_CPN;
+
 `ifdef neg_tchk
 wire d_CP,d_CDN,d_ENN,d_D,d_SC,d_SD;
 `endif
@@ -37484,6 +38104,8 @@ module secrq2 (CP,CDN,ENN,D,SC,SD,Q);
 
 output  Q;
 input   CP,CDN,ENN,D,SC,SD;
+
+wire not_CDN,CDN_buf,SC_buf,ENN_buf,not_CPN;
 
 `ifdef neg_tchk
 wire d_CP,d_CDN,d_ENN,d_D,d_SC,d_SD;
@@ -37609,6 +38231,8 @@ module secrq4 (CP,CDN,ENN,D,SC,SD,Q);
 output  Q;
 input   CP,CDN,ENN,D,SC,SD;
 
+wire not_CDN,CDN_buf,SC_buf,ENN_buf,not_CPN;
+
 `ifdef neg_tchk
 wire d_CP,d_CDN,d_ENN,d_D,d_SC,d_SD;
 `endif
@@ -37732,6 +38356,8 @@ module senrb1 (CP,ENN,D,SC,SD,Q,QN);
 output  Q,QN;
 input   CP,ENN,D,SC,SD;
 
+wire buf_Q,SC_buf,ENN_buf;
+
 `ifdef neg_tchk
 wire d_CP,d_ENN,d_D,d_SC,d_SD;
 `endif
@@ -37846,6 +38472,8 @@ module senrb2 (CP,ENN,D,SC,SD,Q,QN);
 output  Q,QN;
 input   CP,ENN,D,SC,SD;
 
+wire buf_Q,SC_buf,ENN_buf;
+
 `ifdef neg_tchk
 wire d_CP,d_ENN,d_D,d_SC,d_SD;
 `endif
@@ -37959,6 +38587,8 @@ module senrb4 (CP,ENN,D,SC,SD,Q,QN);
 
 output  Q,QN;
 input   CP,ENN,D,SC,SD;
+
+wire buf_Q,SC_buf,ENN_buf;
 
 `ifdef neg_tchk
 wire d_CP,d_ENN,d_D,d_SC,d_SD;
@@ -38075,6 +38705,8 @@ module senrq1 (CP,ENN,D,SC,SD,Q);
 output  Q;
 input   CP,ENN,D,SC,SD;
 
+wire SC_buf,ENN_buf;
+
 `ifdef neg_tchk
 wire d_CP,d_ENN,d_D,d_SC,d_SD;
 `endif
@@ -38184,6 +38816,8 @@ module senrq2 (CP,ENN,D,SC,SD,Q);
 
 output  Q;
 input   CP,ENN,D,SC,SD;
+
+wire SC_buf,ENN_buf;
 
 `ifdef neg_tchk
 wire d_CP,d_ENN,d_D,d_SC,d_SD;
@@ -38296,6 +38930,8 @@ module senrq4 (CP,ENN,D,SC,SD,Q);
 output  Q;
 input   CP,ENN,D,SC,SD;
 
+wire SC_buf,ENN_buf;
+
 `ifdef neg_tchk
 wire d_CP,d_ENN,d_D,d_SC,d_SD;
 `endif
@@ -38406,6 +39042,8 @@ module sepfq1 (CPN,SDN,ENN,D,SC,SD,Q);
 
 output  Q;
 input   CPN,SDN,ENN,D,SC,SD;
+
+wire not_CPN,SDN_buf,SC_buf,ENN_buf;
 
 `ifdef neg_tchk
 wire d_CPN,d_SDN,d_ENN,d_D,d_SC,d_SD;
@@ -38534,6 +39172,8 @@ module sepfq2 (CPN,SDN,ENN,D,SC,SD,Q);
 output  Q;
 input   CPN,SDN,ENN,D,SC,SD;
 
+wire not_CPN,SDN_buf,SC_buf,ENN_buf;
+
 `ifdef neg_tchk
 wire d_CPN,d_SDN,d_ENN,d_D,d_SC,d_SD;
 `endif
@@ -38661,6 +39301,8 @@ module sepfq4 (CPN,SDN,ENN,D,SC,SD,Q);
 output  Q;
 input   CPN,SDN,ENN,D,SC,SD;
 
+wire not_CPN,SDN_buf,SC_buf,ENN_buf;
+
 `ifdef neg_tchk
 wire d_CPN,d_SDN,d_ENN,d_D,d_SC,d_SD;
 `endif
@@ -38787,6 +39429,8 @@ module seprq1 (CP,SDN,ENN,D,SC,SD,Q);
 output  Q;
 input   CP,SDN,ENN,D,SC,SD;
 
+wire not_CPN,SDN_buf,SC_buf,ENN_buf;
+
 `ifdef neg_tchk
 wire d_CP,d_SDN,d_ENN,d_D,d_SC,d_SD;
 `endif
@@ -38910,6 +39554,8 @@ module seprq2 (CP,SDN,ENN,D,SC,SD,Q);
 
 output  Q;
 input   CP,SDN,ENN,D,SC,SD;
+
+wire not_CPN,SDN_buf,SC_buf,ENN_buf;
 
 `ifdef neg_tchk
 wire d_CP,d_SDN,d_ENN,d_D,d_SC,d_SD;
@@ -39035,6 +39681,8 @@ module seprq4 (CP,SDN,ENN,D,SC,SD,Q);
 output  Q;
 input   CP,SDN,ENN,D,SC,SD;
 
+wire not_CPN,SDN_buf,SC_buf,ENN_buf;
+
 `ifdef neg_tchk
 wire d_CP,d_SDN,d_ENN,d_D,d_SC,d_SD;
 `endif
@@ -39155,6 +39803,9 @@ module skbrb1 (J,KZ,SD,SC,CP,Q,QN,SDN,CDN);
 
 output  Q,QN;
 input   J,KZ,SD,SC,CP,SDN,CDN;
+
+wire temp,not_temp_2,temp_2;
+wire not_J,not_KZ,not_SD,not_CDN,not_SDN,not_CP,SDN_buf,CDN_buf,SC_buf;
 
 `ifdef neg_tchk
 wire d_J,d_KZ,d_SD,d_SC,d_CP,d_SDN,d_CDN;
@@ -39320,6 +39971,9 @@ module skbrb2 (J,KZ,SD,SC,CP,Q,QN,SDN,CDN);
 output  Q,QN;
 input   J,KZ,SD,SC,CP,SDN,CDN;
 
+wire temp,not_temp_2,temp_2;
+wire not_J,not_KZ,not_SD,not_CDN,not_SDN,not_CP,SDN_buf,CDN_buf,SC_buf;
+
 `ifdef neg_tchk
 wire d_J,d_KZ,d_SD,d_SC,d_CP,d_SDN,d_CDN;
 `endif
@@ -39483,6 +40137,9 @@ module skbrb4 (J,KZ,SD,SC,CP,Q,QN,SDN,CDN);
 
 output  Q,QN;
 input   J,KZ,SD,SC,CP,SDN,CDN;
+
+wire temp,not_temp_2,temp_2;
+wire not_J,not_KZ,not_SD,not_CDN,not_SDN,not_CP,SDN_buf,CDN_buf,SC_buf;
 
 `ifdef neg_tchk
 wire d_J,d_KZ,d_SD,d_SC,d_CP,d_SDN,d_CDN;
@@ -39649,6 +40306,9 @@ module slbhb1 (E,SC,D,SD,CDN,SDN,Q,QN,SO);
 output  Q,QN,SO;
 input   E,SC,D,SD,CDN,SDN;
 
+wire temp,not_temp_2,temp_2,mux_out;
+wire not_J,not_KZ,not_SD,not_CDN,not_SDN,not_CP,SDN_buf,CDN_buf,SC_buf;
+
 `ifdef neg_tchk
 wire d_E,d_D,d_SC,d_SD,d_CDN,d_SDN;
 `endif
@@ -39802,6 +40462,9 @@ module slbhb2 (E,SC,D,SD,CDN,SDN,Q,QN,SO);
 
 output  Q,QN,SO;
 input   E,SC,D,SD,CDN,SDN;
+
+wire temp,not_temp_2,temp_2,mux_out;
+wire not_J,not_KZ,not_SD,not_CDN,not_SDN,not_CP,SDN_buf,CDN_buf,SC_buf;
 
 `ifdef neg_tchk
 wire d_E,d_D,d_SC,d_SD,d_CDN,d_SDN;
@@ -39957,6 +40620,9 @@ module slbhb4 (E,SC,D,SD,CDN,SDN,Q,QN,SO);
 output  Q,QN,SO;
 input   E,SC,D,SD,CDN,SDN;
 
+wire temp,not_temp_2,temp_2,mux_out;
+wire not_J,not_KZ,not_SD,not_CDN,not_SDN,not_CP,SDN_buf,CDN_buf,SC_buf;
+
 `ifdef neg_tchk
 wire d_E,d_D,d_SC,d_SD,d_CDN,d_SDN;
 `endif
@@ -40111,6 +40777,9 @@ module slchq1 (E,D,SD,SC,CDN,Q,SO);
 output  Q,SO;
 input   E,D,SD,SC,CDN;
 
+wire temp,not_temp_2,temp_2,mux_out;
+wire not_J,not_KZ,not_SD,not_CDN,not_SDN,not_CP,SDN_buf,CDN_buf,SC_buf;
+
 `ifdef neg_tchk
 wire d_E,d_D,d_SD,d_SC,d_CDN;
 `endif
@@ -40237,6 +40906,9 @@ module slchq2 (E,D,SD,SC,CDN,Q,SO);
 
 output  Q,SO;
 input   E,D,SD,SC,CDN;
+
+wire temp,not_temp_2,temp_2,mux_out;
+wire not_J,not_KZ,not_SD,not_CDN,not_SDN,not_CP,SDN_buf,CDN_buf,SC_buf;
 
 `ifdef neg_tchk
 wire d_E,d_D,d_SD,d_SC,d_CDN;
@@ -40365,6 +41037,9 @@ module slchq4 (E,D,SD,SC,CDN,Q,SO);
 output  Q,SO;
 input   E,D,SD,SC,CDN;
 
+wire temp,not_temp_2,temp_2,mux_out;
+wire not_J,not_KZ,not_SD,not_CDN,not_SDN,not_CP,SDN_buf,CDN_buf,SC_buf;
+
 `ifdef neg_tchk
 wire d_E,d_D,d_SD,d_SC,d_CDN;
 `endif
@@ -40491,6 +41166,9 @@ module slclq1 (EN,D,SD,SC,CDN,Q,SO);
 
 output  Q,SO;
 input   EN,D,SD,SC,CDN;
+
+wire temp,not_temp_2,temp_2,mux_out;
+wire not_J,not_KZ,not_SD,not_CDN,not_SDN,not_CP,SDN_buf,CDN_buf,SC_buf,not_EN;
 
 `ifdef neg_tchk
 wire d_EN,d_D,d_SD,d_SC,d_CDN;
@@ -40623,6 +41301,9 @@ module slclq2 (EN,D,SD,SC,CDN,Q,SO);
 output  Q,SO;
 input   EN,D,SD,SC,CDN;
 
+wire temp,not_temp_2,temp_2,mux_out;
+wire not_J,not_KZ,not_SD,not_CDN,not_SDN,not_CP,SDN_buf,CDN_buf,SC_buf,not_EN;
+
 `ifdef neg_tchk
 wire d_EN,d_D,d_SD,d_SC,d_CDN;
 `endif
@@ -40753,6 +41434,9 @@ module slclq4 (EN,D,SD,SC,CDN,Q,SO);
 
 output  Q,SO;
 input   EN,D,SD,SC,CDN;
+
+wire temp,not_temp_2,temp_2,mux_out;
+wire not_J,not_KZ,not_SD,not_CDN,not_SDN,not_CP,SDN_buf,CDN_buf,SC_buf,not_EN;
 
 `ifdef neg_tchk
 wire d_EN,d_D,d_SD,d_SC,d_CDN;
@@ -40885,6 +41569,9 @@ module slnhb1 (D,SD,SC,E,Q,QN,SO);
 output  Q,QN,SO;
 input   D,SD,SC,E;
 
+wire temp,not_temp_2,temp_2,mux_out,buf_Q;
+wire not_J,not_KZ,not_SD,not_CDN,not_SDN,not_CP,SDN_buf,CDN_buf,SC_buf,not_EN;
+
 `ifdef neg_tchk
 wire d_D,d_E,d_SD,d_SC;
 `endif
@@ -41005,6 +41692,9 @@ module slnhb2 (D,SD,SC,E,Q,QN,SO);
 
 output  Q,QN,SO;
 input   D,SD,SC,E;
+
+wire temp,not_temp_2,temp_2,mux_out,buf_Q;
+wire not_J,not_KZ,not_SD,not_CDN,not_SDN,not_CP,SDN_buf,CDN_buf,SC_buf,not_EN;
 
 `ifdef neg_tchk
 wire d_D,d_E,d_SD,d_SC;
@@ -41127,6 +41817,9 @@ module slnhb4 (D,SD,SC,E,Q,QN,SO);
 output  Q,QN,SO;
 input   D,SD,SC,E;
 
+wire temp,not_temp_2,temp_2,mux_out,buf_Q;
+wire not_J,not_KZ,not_SD,not_CDN,not_SDN,not_CP,SDN_buf,CDN_buf,SC_buf,not_EN;
+
 `ifdef neg_tchk
 wire d_D,d_E,d_SD,d_SC;
 `endif
@@ -41248,6 +41941,9 @@ module slnhn1 (D,SD,SC,E,QN,SO);
 output  QN,SO;
 input   D,SD,SC,E;
 
+wire temp,not_temp_2,temp_2,mux_out,buf_Q,mux,mux_not,Q;
+wire not_J,not_KZ,not_SD,not_CDN,not_SDN,not_CP,SDN_buf,CDN_buf,SC_buf,not_EN;
+
 `ifdef neg_tchk
 wire d_D,d_E,d_SD,d_SC;
 `endif
@@ -41360,6 +42056,8 @@ module slnhn2 (D,SD,SC,E,QN,SO);
 
 output  QN,SO;
 input   D,SD,SC,E;
+
+wire mux,mux_not,Q;
 
 `ifdef neg_tchk
 wire d_D,d_E,d_SD,d_SC;
@@ -41474,6 +42172,9 @@ module slnhn4 (D,SD,SC,E,QN,SO);
 output  QN,SO;
 input   D,SD,SC,E;
 
+
+wire mux,mux_not,Q;
+
 `ifdef neg_tchk
 wire d_D,d_E,d_SD,d_SC;
 `endif
@@ -41587,6 +42288,8 @@ module slnhq1 (D,SD,SC,E,Q,SO);
 output  Q,SO;
 input   D,SD,SC,E;
 
+wire mux,mux_out,Q;
+
 `ifdef neg_tchk
 wire d_D,d_E,d_SD,d_SC;
 `endif
@@ -41696,6 +42399,8 @@ module slnhq2 (D,SD,SC,E,Q,SO);
 
 output  Q,SO;
 input   D,SD,SC,E;
+
+wire mux_out;
 
 `ifdef neg_tchk
 wire d_D,d_E,d_SD,d_SC;
@@ -41807,6 +42512,8 @@ module slnhq4 (D,SD,SC,E,Q,SO);
 output  Q,SO;
 input   D,SD,SC,E;
 
+wire mux_out;
+
 `ifdef neg_tchk
 wire d_D,d_E,d_SD,d_SC;
 `endif
@@ -41916,6 +42623,8 @@ module slnht1 (D,SD,SC,E,OE,Z,SO);
 
 output  Z,SO;
 input   D,SD,SC,E,OE;
+
+wire mux_out,OE_buf,Q;
 
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_E;
@@ -42033,6 +42742,8 @@ module slnht2 (D,SD,SC,E,OE,Z,SO);
 output  Z,SO;
 input   D,SD,SC,E,OE;
 
+wire mux_out,OE_buf,Q;
+
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_E;
 `endif
@@ -42149,6 +42860,8 @@ module slnht4 (D,SD,SC,E,OE,Z,SO);
 output  Z,SO;
 input   D,SD,SC,E,OE;
 
+wire mux_out,OE_buf,Q;
+
 `ifdef neg_tchk
 wire d_D,d_SD,d_SC,d_E;
 `endif
@@ -42264,6 +42977,8 @@ module slnlb1 (D,SD,SC,EN,Q,QN,SO);
 
 output  Q,QN,SO;
 input   D,SD,SC,EN;
+
+wire mux_out,OE_buf,Q,buf_Q;
 
 `ifdef neg_tchk
 wire d_D,d_EN,d_SD,d_SC;
@@ -42386,6 +43101,8 @@ module slnlb2 (D,SD,SC,EN,Q,QN,SO);
 output  Q,QN,SO;
 input   D,SD,SC,EN;
 
+wire mux_out,OE_buf,Q,buf_Q;
+
 `ifdef neg_tchk
 wire d_D,d_EN,d_SD,d_SC;
 `endif
@@ -42506,6 +43223,8 @@ module slnlb4 (D,SD,SC,EN,Q,QN,SO);
 
 output  Q,QN,SO;
 input   D,SD,SC,EN;
+
+wire mux_out,OE_buf,Q,buf_Q;
 
 `ifdef neg_tchk
 wire d_D,d_EN,d_SD,d_SC;
@@ -42628,6 +43347,8 @@ module slnln1 (D,SD,SC,EN,QN,SO);
 output  QN,SO;
 input   D,SD,SC,EN;
 
+wire mux_out,OE_buf,Q,buf_Q,mux_not;
+
 `ifdef neg_tchk
 wire d_D,d_EN,d_SD,d_SC;
 `endif
@@ -42739,6 +43460,8 @@ module slnln2 (D,SD,SC,EN,QN,SO);
 
 output  QN,SO;
 input   D,SD,SC,EN;
+
+wire mux_out,OE_buf,Q,buf_Q,mux_not;
 
 `ifdef neg_tchk
 wire d_D,d_EN,d_SD,d_SC;
@@ -42852,6 +43575,8 @@ module slnln4 (D,SD,SC,EN,QN,SO);
 output  QN,SO;
 input   D,SD,SC,EN;
 
+wire mux_out,OE_buf,Q,buf_Q,mux_not;
+
 `ifdef neg_tchk
 wire d_D,d_EN,d_SD,d_SC;
 `endif
@@ -42964,6 +43689,8 @@ module slnlq1 (D,SD,SC,EN,Q,SO);
 output  Q,SO;
 input   D,SD,SC,EN;
 
+wire mux_out,OE_buf,Q,buf_Q,mux_not;
+
 `ifdef neg_tchk
 wire d_D,d_EN,d_SD,d_SC;
 `endif
@@ -43073,6 +43800,8 @@ module slnlq2 (D,SD,SC,EN,Q,SO);
 
 output  Q,SO;
 input   D,SD,SC,EN;
+
+wire mux_out,OE_buf,Q,buf_Q,mux_not;
 
 `ifdef neg_tchk
 wire d_D,d_EN,d_SD,d_SC;
@@ -43184,6 +43913,8 @@ module slnlq4 (D,SD,SC,EN,Q,SO);
 output  Q,SO;
 input   D,SD,SC,EN;
 
+wire mux_out,OE_buf,Q,buf_Q,mux_not;
+
 `ifdef neg_tchk
 wire d_D,d_EN,d_SD,d_SC;
 `endif
@@ -43294,6 +44025,8 @@ module srlab1 (RN,SN,Q,QN);
 output  Q,QN;
 input   RN,SN;
 
+wire RN_buf,SN_buf;
+
 buf b_RN (RN_buf,RN);
 buf b_SN (SN_buf,SN);
 
@@ -43365,6 +44098,8 @@ module srlab2 (RN,SN,Q,QN);
 output  Q,QN;
 input   RN,SN;
 
+wire RN_buf,SN_buf;
+
 buf b_RN (RN_buf,RN);
 buf b_SN (SN_buf,SN);
 
@@ -43435,6 +44170,8 @@ module srlab4 (RN,SN,Q,QN);
 
 output  Q,QN;
 input   RN,SN;
+
+wire RN_buf,SN_buf;
 
 buf b_RN (RN_buf,RN);
 buf b_SN (SN_buf,SN);

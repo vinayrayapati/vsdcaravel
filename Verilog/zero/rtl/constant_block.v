@@ -35,12 +35,12 @@ module constant_block (
     wire	zero_unbuf;
 
     scl_conb const_source (
-`ifdef USE_POWER_PINS
-            .VPWR(vccd),
-            .VGND(vssd),
-            .VPB(vccd),
-            .VNB(vssd),
-`endif
+// `ifdef USE_POWER_PINS
+//             .VPWR(vccd),
+//             .VGND(vssd),
+//             .VPB(vccd),
+//             .VNB(vssd),
+// `endif
             .HI(one_unbuf),
             .LO(zero_unbuf)
     );
@@ -52,23 +52,23 @@ module constant_block (
     /* requirements, without buffering.					*/
 
     buffd1 const_one_buf (
-`ifdef USE_POWER_PINS
-            .VPWR(vccd),
-            .VGND(vssd),
-            .VPB(vccd),
-            .VNB(vssd),
-`endif
+//`ifdef USE_POWER_PINS
+//             .VPWR(vccd),
+//             .VGND(vssd),
+//             .VPB(vccd),
+//             .VNB(vssd),
+// `endif
             .I(one_unbuf),
             .Z(one)
     );
 
     buffd1 const_zero_buf (
-`ifdef USE_POWER_PINS
-            .VPWR(vccd),
-            .VGND(vssd),
-            .VPB(vccd),
-            .VNB(vssd),
-`endif
+//`ifdef USE_POWER_PINS
+//             .VPWR(vccd),
+//             .VGND(vssd),
+//             .VPB(vccd),
+//             .VNB(vssd),
+// `endif
             .I(zero_unbuf),
             .Z(zero)
     );

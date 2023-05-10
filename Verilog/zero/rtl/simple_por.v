@@ -53,35 +53,35 @@ module simple_por(
     // Instantiate two shmitt trigger buffers in series
 
     scl_schmittbuf_1 hystbuf1 (
-`ifdef USE_POWER_PINS
-	.VPWR(vdd3v3),
-	.VGND(vss3v3),
-	.VPB(vdd3v3),
-	.VNB(vss3v3),
-`endif
+// `ifdef USE_POWER_PINS
+// 	.VPWR(vdd3v3),
+// 	.VGND(vss3v3),
+// 	.VPB(vdd3v3),
+// 	.VNB(vss3v3),
+// `endif
 	.A(inode),
 	.X(mid)
     );
 
     scl_schmittbuf_1 hystbuf2 (
-`ifdef USE_POWER_PINS
-	.VPWR(vdd3v3),
-	.VGND(vss3v3),
-	.VPB(vdd3v3),
-	.VNB(vss3v3),
-`endif
+// `ifdef USE_POWER_PINS
+// 	.VPWR(vdd3v3),
+// 	.VGND(vss3v3),
+// 	.VPB(vdd3v3),
+// 	.VNB(vss3v3),
+// `endif
 	.A(mid),
 	.X(porb_h)
     );
 
     scl_lsbufhv2lv_1 porb_level (
-`ifdef USE_POWER_PINS
-	.VPWR(vdd3v3),
-	.VPB(vdd3v3),
-	.LVPWR(vdd1v8),
-	.VNB(vss3v3),
-	.VGND(vss3v3),
-`endif
+// `ifdef USE_POWER_PINS
+// 	.VPWR(vdd3v3),
+// 	.VPB(vdd3v3),
+// 	.LVPWR(vdd1v8),
+// 	.VNB(vss3v3),
+// 	.VGND(vss3v3),
+// `endif
 	.A(porb_h),
 	.X(porb_l)
     );

@@ -245,21 +245,21 @@ module gpio_control_block #(
 
     (* keep *)
     scl_macro_sparecell spare_cell (
-`ifdef USE_POWER_PINS
-            .VPWR(vccd),
-            .VGND(vssd),
-            .VPB(vccd),
-            .VNB(vssd)
-`endif
+// `ifdef USE_POWER_PINS
+//             .VPWR(vccd),
+//             .VGND(vssd),
+//             .VPB(vccd),
+//             .VNB(vssd)
+// `endif
     );
 
     scl_conb const_source (
-`ifdef USE_POWER_PINS
-            .VPWR(vccd),
-            .VGND(vssd),
-            .VPB(vccd),
-            .VNB(vssd),
-`endif
+// `ifdef USE_POWER_PINS
+//             .VPWR(vccd),
+//             .VGND(vssd),
+//             .VPB(vccd),
+//             .VNB(vssd),
+// `endif
             .HI(one_unbuf),
             .LO(zero_unbuf)
     );

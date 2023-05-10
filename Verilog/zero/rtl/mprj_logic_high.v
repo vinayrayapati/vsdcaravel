@@ -21,12 +21,12 @@ module mprj_logic_high (
     output [462:0] HI
 );
 scl_conb insts [462:0] (
-`ifdef USE_POWER_PINS
-                .VPWR(vccd1),
-                .VGND(vssd1),
-                .VPB(vccd1),
-                .VNB(vssd1),
-`endif
+// `ifdef USE_POWER_PINS
+//                 .VPWR(vccd1),
+//                 .VGND(vssd1),
+//                 .VPB(vccd1),
+//                 .VNB(vssd1),
+// `endif
                 .HI(HI),
                 .LO()
         );

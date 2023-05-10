@@ -15,47 +15,47 @@
 
 // `default_nettype none
 `ifndef TOP_ROUTING 
-	`define USER1_ABUTMENT_PINS \
-	.AMUXBUS_A(analog_a),\
-	.AMUXBUS_B(analog_b),\
-	.VSSA(vssa1),\
-	.VDDA(vdda1),\
-	.VSWITCH(vddio),\
-	.VDDIO_Q(vddio_q),\
-	.VCCHIB(vccd),\
-	.VDDIO(vddio),\
-	.VCCD(vccd),\
-	.VSSIO(vssio),\
-	.VSSD(vssd),\
-	.VSSIO_Q(vssio_q),
+	 `define USER1_ABUTMENT_PINS //\
+	// .AMUXBUS_A(analog_a),\
+	// .AMUXBUS_B(analog_b),\
+	// .VSSA(vssa1),\
+	// .VDDA(vdda1),\
+	// .VSWITCH(vddio),\
+	// .VDDIO_Q(vddio_q),\
+	// .VCCHIB(vccd),\
+	// .VDDIO(vddio),\
+	// .VCCD(vccd),\
+	// .VSSIO(vssio),\
+	// .VSSD(vssd),\
+	// .VSSIO_Q(vssio_q),
 
-	`define USER2_ABUTMENT_PINS \
-	.AMUXBUS_A(analog_a),\
-	.AMUXBUS_B(analog_b),\
-	.VSSA(vssa2),\
-	.VDDA(vdda2),\
-	.VSWITCH(vddio),\
-	.VDDIO_Q(vddio_q),\
-	.VCCHIB(vccd),\
-	.VDDIO(vddio),\
-	.VCCD(vccd),\
-	.VSSIO(vssio),\
-	.VSSD(vssd),\
-	.VSSIO_Q(vssio_q),
+	`define USER2_ABUTMENT_PINS //\
+	// .AMUXBUS_A(analog_a),\
+	// .AMUXBUS_B(analog_b),\
+	// .VSSA(vssa2),\
+	// .VDDA(vdda2),\
+	// .VSWITCH(vddio),\
+	// .VDDIO_Q(vddio_q),\
+	// .VCCHIB(vccd),\
+	// .VDDIO(vddio),\
+	// .VCCD(vccd),\
+	// .VSSIO(vssio),\
+	// .VSSD(vssd),\
+	// .VSSIO_Q(vssio_q),
 
-	`define MGMT_ABUTMENT_PINS \
-	.AMUXBUS_A(analog_a),\
-	.AMUXBUS_B(analog_b),\
-	.VSSA(vssa),\
-	.VDDA(vdda),\
-	.VSWITCH(vddio),\
-	.VDDIO_Q(vddio_q),\
-	.VCCHIB(vccd),\
-	.VDDIO(vddio),\
-	.VCCD(vccd),\
-	.VSSIO(vssio),\
-	.VSSD(vssd),\
-	.VSSIO_Q(vssio_q),
+	`define MGMT_ABUTMENT_PINS //\
+	// .AMUXBUS_A(analog_a),\
+	// .AMUXBUS_B(analog_b),\
+	// .VSSA(vssa),\
+	// .VDDA(vdda),\
+	// .VSWITCH(vddio),\
+	// .VDDIO_Q(vddio_q),\
+	// .VCCHIB(vccd),\
+	// .VDDIO(vddio),\
+	// .VCCD(vccd),\
+	// .VSSIO(vssio),\
+	// .VSSD(vssd),\
+	// .VSSIO_Q(vssio_q),
 `else 
 	`define USER1_ABUTMENT_PINS 
 	`define USER2_ABUTMENT_PINS 
@@ -81,30 +81,31 @@
 	`ifndef	TOP_ROUTING \
 		.PAD(X), \
 	`endif	\
-		.OUT(CONB_ZERO), \
-		.OE_N(CONB_ONE), \
-		.HLD_H_N(loop_one_``X), \
-		.ENABLE_H(porb_h), \
-		.ENABLE_INP_H(loop_zero_``X), \
-		.ENABLE_VDDA_H(porb_h), \
-		.ENABLE_VSWITCH_H(loop_zero_``X), \
-		.ENABLE_VDDIO(CONB_ONE), \
-		.INP_DIS(por), \
-		.IB_MODE_SEL(CONB_ZERO), \
-		.VTRIP_SEL(CONB_ZERO), \
-		.SLOW(CONB_ZERO),	\
-		.HLD_OVR(CONB_ZERO), \
-		.ANALOG_EN(CONB_ZERO), \
-		.ANALOG_SEL(CONB_ZERO), \
-		.ANALOG_POL(CONB_ZERO), \
-		.DM({CONB_ZERO, CONB_ZERO, CONB_ONE}), \
-		.PAD_A_NOESD_H(), \
-		.PAD_A_ESD_0_H(), \
-		.PAD_A_ESD_1_H(), \
-		.CIN(Y), \
-		.IN_H(), \
-		.TIE_HI_ESD(loop_one_``X), \
-		.TIE_LO_ESD(loop_zero_``X) )
+	.CIN(Y))
+		// .OUT(CONB_ZERO), \
+		// .OE_N(CONB_ONE), \
+		// .HLD_H_N(loop_one_``X), \
+		// .ENABLE_H(porb_h), \
+		// .ENABLE_INP_H(loop_zero_``X), \
+		// .ENABLE_VDDA_H(porb_h), \
+		// .ENABLE_VSWITCH_H(loop_zero_``X), \
+		// .ENABLE_VDDIO(CONB_ONE), \
+		// .INP_DIS(por), \
+		// .IB_MODE_SEL(CONB_ZERO), \
+		// .VTRIP_SEL(CONB_ZERO), \
+		// .SLOW(CONB_ZERO),	\
+		// .HLD_OVR(CONB_ZERO), \
+		// .ANALOG_EN(CONB_ZERO), \
+		// .ANALOG_SEL(CONB_ZERO), \
+		// .ANALOG_POL(CONB_ZERO), \
+		// .DM({CONB_ZERO, CONB_ZERO, CONB_ONE}), \
+		// .PAD_A_NOESD_H(), \
+		// .PAD_A_ESD_0_H(), \
+		// .PAD_A_ESD_1_H(), \
+		// .CIN(Y), \
+		// .IN_H(), \
+		// .TIE_HI_ESD(loop_one_``X), \
+		// .TIE_LO_ESD(loop_zero_``X) )
 
 `define OUTPUT_PAD(X,Y,CONB_ONE,CONB_ZERO,INPUT_DIS,OUT_EN_N) \
 	wire loop_zero_``X; \
@@ -147,30 +148,31 @@
 	`ifndef	TOP_ROUTING \
 		.PAD(X), \
 	`endif \
-		.OUT(Y), \
-		.OE_N(OUT_EN_N), \
-		.HLD_H_N(loop_one_``X), \
-		.ENABLE_H(porb_h),	\
-		.ENABLE_INP_H(loop_zero_``X), \
-		.ENABLE_VDDA_H(porb_h), \
-		.ENABLE_VSWITCH_H(loop_zero_``X), \
-		.ENABLE_VDDIO(CONB_ONE), \
-		.I(CONB_ZERO), \
-		.IB_MODE_SEL(CONB_ZERO), \
-		.VTRIP_SEL(CONB_ZERO), \
-		.SLOW(CONB_ZERO),	\
-		.HLD_OVR(CONB_ZERO), \
-		.ANALOG_EN(CONB_ZERO), \
-		.ANALOG_SEL(CONB_ZERO), \
-		.ANALOG_POL(CONB_ZERO), \
-		.DM({CONB_ONE, CONB_ONE, CONB_ZERO}), \
-		.PAD_A_NOESD_H(), \
-		.PAD_A_ESD_0_H(), \
-		.PAD_A_ESD_1_H(), \
-		.IN(), \
-		.IN_H(), \
-		.TIE_HI_ESD(loop_one_``X), \
-		.TIE_LO_ESD(loop_zero_``X)) 
+	.I(CONB_ZERO))
+		// .OUT(Y), \
+		// .OE_N(OUT_EN_N), \
+		// .HLD_H_N(loop_one_``X), \
+		// .ENABLE_H(porb_h),	\
+		// .ENABLE_INP_H(loop_zero_``X), \
+		// .ENABLE_VDDA_H(porb_h), \
+		// .ENABLE_VSWITCH_H(loop_zero_``X), \
+		// .ENABLE_VDDIO(CONB_ONE), \
+		// .I(CONB_ZERO), \
+		// .IB_MODE_SEL(CONB_ZERO), \
+		// .VTRIP_SEL(CONB_ZERO), \
+		// .SLOW(CONB_ZERO),	\
+		// .HLD_OVR(CONB_ZERO), \
+		// .ANALOG_EN(CONB_ZERO), \
+		// .ANALOG_SEL(CONB_ZERO), \
+		// .ANALOG_POL(CONB_ZERO), \
+		// .DM({CONB_ONE, CONB_ONE, CONB_ZERO}), \
+		// .PAD_A_NOESD_H(), \
+		// .PAD_A_ESD_0_H(), \
+		// .PAD_A_ESD_1_H(), \
+		// .IN(), \
+		// .IN_H(), \
+		// .TIE_HI_ESD(loop_one_``X), \
+		// .TIE_LO_ESD(loop_zero_``X)) 
 
 `define INOUT_PAD(X,Y,CONB_ONE,CONB_ZERO,Y_OUT,INPUT_DIS,OUT_EN_N,MODE) \
 	wire loop_zero_``X; \
@@ -180,29 +182,32 @@
 	`ifndef	TOP_ROUTING \
 		.PAD(X), \
 	`endif	\
-		.OUT(Y_OUT),	\
-		.OEN(OUT_EN_N), \
-		.HLD_H_N(loop_one_``X),	\
-		.ENABLE_H(porb_h), \
-		.ENABLE_INP_H(loop_zero_``X), \
-		.ENABLE_VDDA_H(porb_h), \
-		.ENABLE_VSWITCH_H(loop_zero_``X), \
-		.ENABLE_VDDIO(CONB_ONE), \
-		.I(INPUT_DIS), \
-		.IB_MODE_SEL(CONB_ZERO), \
-		.VTRIP_SEL(CONB_ZERO), \
-		.SLOW(CONB_ZERO),	\
-		.HLD_OVR(CONB_ZERO), \
-		.ANALOG_EN(CONB_ZERO), \
-		.ANALOG_SEL(CONB_ZERO), \
-		.ANALOG_POL(CONB_ZERO), \
-		.DM(MODE), \
-		.PAD_A_NOESD_H(), \
-		.PAD_A_ESD_0_H(), \
-		.PAD_A_ESD_1_H(), \
-		.CIN(Y),  \
-		.IN_H(), \
-		.TIE_HI_ESD(loop_one_``X), \
-		.TIE_LO_ESD(loop_zero_``X) )
+	.OEN(OUT_EN_N), \
+	.I(INPUT_DIS), \
+	.CIN(Y))
+		//.OUT(Y_OUT),	\
+		// .OEN(OUT_EN_N), \
+		// .HLD_H_N(loop_one_``X),	\
+		// .ENABLE_H(porb_h), \
+		// .ENABLE_INP_H(loop_zero_``X), \
+		// .ENABLE_VDDA_H(porb_h), \
+		// .ENABLE_VSWITCH_H(loop_zero_``X), \
+		// .ENABLE_VDDIO(CONB_ONE), \
+		// .I(INPUT_DIS), \
+		// .IB_MODE_SEL(CONB_ZERO), \
+		// .VTRIP_SEL(CONB_ZERO), \
+		// .SLOW(CONB_ZERO),	\
+		// .HLD_OVR(CONB_ZERO), \
+		// .ANALOG_EN(CONB_ZERO), \
+		// .ANALOG_SEL(CONB_ZERO), \
+		// .ANALOG_POL(CONB_ZERO), \
+		// .DM(MODE), \
+		// .PAD_A_NOESD_H(), \
+		// .PAD_A_ESD_0_H(), \
+		// .PAD_A_ESD_1_H(), \
+		// .CIN(Y),  \
+		// .IN_H(), \
+		// .TIE_HI_ESD(loop_one_``X), \
+		// .TIE_LO_ESD(loop_zero_``X))
 
 // `default_nettype wire

@@ -40,11 +40,11 @@ hex:  ${PATTERN:=.hex}
 ifeq ($(SIM),RTL)
 	iverilog -Ttyp $(SIM_DEFINES) -I $(BEHAVIOURAL_MODELS) \
 	-I $(PDK_PATH) -I $(LIBRARY_VERILOG) -I $(VERILOG_PATH) -I $(RTL_PATH) \
-	$< -o $@ 
+	-o $@ $<
 else  
 	iverilog -Ttyp $(SIM_DEFINES) -DGL -I $(BEHAVIOURAL_MODELS) \
 	-I $(PDK_PATH) -I $(VERILOG_PATH) -I $(RTL_PATH) \
-	$< -o $@ 
+	-o $@ $<
 endif
 
 %.vcd: %.vvp

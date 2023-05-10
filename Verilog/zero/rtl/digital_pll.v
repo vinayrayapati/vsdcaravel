@@ -73,24 +73,24 @@ module digital_pll(
 
     (* keep *)
     buffd1 clockp_buffer_0 (
-`ifdef USE_POWER_PINS
-        .VPWR(VPWR),
-        .VGND(VGND),
-        .VPB(VPWR),
-        .VNB(VGND),
-`endif
+// `ifdef USE_POWER_PINS
+//         .VPWR(VPWR),
+//         .VGND(VGND),
+//         .VPB(VPWR),
+//         .VNB(VGND),
+// `endif
         .I(clockp_buffer_in[0]),
         .Z(clockp[0])
     );
 
     (* keep *)
     buffd1 clockp_buffer_1 (
-`ifdef USE_POWER_PINS
-        .VPWR(VPWR),
-        .VGND(VGND),
-        .VPB(VPWR),
-        .VNB(VGND),
-`endif
+// `ifdef USE_POWER_PINS
+//         .VPWR(VPWR),
+//         .VGND(VGND),
+//         .VPB(VPWR),
+//         .VNB(VGND),
+// `endif
         .I(clockp_buffer_in[1]),
         .Z(clockp[1])
     );

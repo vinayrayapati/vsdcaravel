@@ -39,15 +39,15 @@ inout  LVGND;
 `endif
 
 scl_lsbufhv2lv_1 lvlshiftdown (
-`ifdef USE_POWER_PINS
-	.VPWR(VPWR),
-	.VPB(VPWR),
+// `ifdef USE_POWER_PINS
+// 	.VPWR(VPWR),
+// 	.VPB(VPWR),
 
-	.LVPWR(LVPWR),
+// 	.LVPWR(LVPWR),
 
-	.VNB(VGND),
-	.VGND(VGND),
-`endif
+// 	.VNB(VGND),
+// 	.VGND(VGND),
+// `endif
 	.A(A),
 	.X(X)
 );

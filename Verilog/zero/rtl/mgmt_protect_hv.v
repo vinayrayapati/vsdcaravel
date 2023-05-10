@@ -52,23 +52,23 @@ module mgmt_protect_hv (
     // Logic high in the VDDA (3.3V) domains
 
     scl_conb mprj_logic_high_hvl (
-`ifdef USE_POWER_PINS
-        .VPWR(vdda1),
-        .VGND(vssa1),
-        .VPB(vdda1),
-        .VNB(vssa1),
-`endif
+// `ifdef USE_POWER_PINS
+//         .VPWR(vdda1),
+//         .VGND(vssa1),
+//         .VPB(vdda1),
+//         .VNB(vssa1),
+// `endif
         .HI(mprj_vdd_logic1_h),
         .LO()
     );
 
     scl_conb mprj2_logic_high_hvl (
-`ifdef USE_POWER_PINS
-        .VPWR(vdda2),
-        .VGND(vssa2),
-        .VPB(vdda2),
-        .VNB(vssa2),
-`endif
+// `ifdef USE_POWER_PINS
+//         .VPWR(vdda2),
+//         .VGND(vssa2),
+//         .VPB(vdda2),
+//         .VNB(vssa2),
+// `endif
         .HI(mprj2_vdd_logic1_h),
         .LO()
     );
@@ -76,25 +76,25 @@ module mgmt_protect_hv (
     // Level shift the logic high signals into the 1.8V domain
 
     scl_lsbufhv2lv_1 mprj_logic_high_lv (
-`ifdef USE_POWER_PINS
-	.VPWR(vdda1),
-	.VGND(vssd),
-	.LVPWR(vccd),
-	.VPB(vdda1),
-	.VNB(vssd),
-`endif
+// `ifdef USE_POWER_PINS
+// 	.VPWR(vdda1),
+// 	.VGND(vssd),
+// 	.LVPWR(vccd),
+// 	.VPB(vdda1),
+// 	.VNB(vssd),
+// `endif
 	.X(mprj_vdd_logic1),
 	.A(mprj_vdd_logic1_h)
     );
 
     scl_lsbufhv2lv_1 mprj2_logic_high_lv (
-`ifdef USE_POWER_PINS
-	.VPWR(vdda2),
-	.VGND(vssd),
-	.LVPWR(vccd),
-	.VPB(vdda2),
-	.VNB(vssd),
-`endif
+// `ifdef USE_POWER_PINS
+// 	.VPWR(vdda2),
+// 	.VGND(vssd),
+// 	.LVPWR(vccd),
+// 	.VPB(vdda2),
+// 	.VNB(vssd),
+// `endif
 	.X(mprj2_vdd_logic1),
 	.A(mprj2_vdd_logic1_h)
     );

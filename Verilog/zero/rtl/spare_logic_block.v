@@ -46,69 +46,69 @@ module spare_logic_block (
     assign spare_xz = spare_logic0;
 
     scl_conb spare_logic_const [26:0] (
-	`ifdef USE_POWER_PINS
-            .VPWR(vccd),
-            .VGND(vssd),
-            .VPB(vccd),
-            .VNB(vssd),
-	`endif
+	// `ifdef USE_POWER_PINS
+    //         .VPWR(vccd),
+    //         .VGND(vssd),
+    //         .VPB(vccd),
+    //         .VNB(vssd),
+	// `endif
             .HI(spare_logic1),
             .LO(spare_logic0)
     );
 
     inv0d0 spare_logic_inv [3:0] (
-	`ifdef USE_POWER_PINS
-            .VPWR(vccd),
-            .VGND(vssd),
-            .VPB(vccd),
-            .VNB(vssd),
-	`endif
-            .I(spare_xi),
-            .ZN(spare_logic0[3:0])
+	// `ifdef USE_POWER_PINS
+    //         .VPWR(vccd),
+    //         .VGND(vssd),
+    //         .VPB(vccd),
+    //         .VNB(vssd),
+	// `endif
+            .ZN(spare_xi),
+            .I(spare_logic0[3:0])
     );
 
     inv0d0 spare_logic_biginv (
-	`ifdef USE_POWER_PINS
-            .VPWR(vccd),
-            .VGND(vssd),
-            .VPB(vccd),
-            .VNB(vssd),
-	`endif
-            .I(spare_xib),
-            .ZN(spare_logic0[4])
+	// `ifdef USE_POWER_PINS
+    //         .VPWR(vccd),
+    //         .VGND(vssd),
+    //         .VPB(vccd),
+    //         .VNB(vssd),
+	// `endif
+            .ZN(spare_xib),
+            .I(spare_logic0[4])
     );
 
     nd02d0 spare_logic_nand [1:0] (
-	`ifdef USE_POWER_PINS
-            .VPWR(vccd),
-            .VGND(vssd),
-            .VPB(vccd),
-            .VNB(vssd),
-	`endif
-            .A1(spare_xna),
+	// `ifdef USE_POWER_PINS
+    //         .VPWR(vccd),
+    //         .VGND(vssd),
+    //         .VPB(vccd),
+    //         .VNB(vssd),
+	// `endif
+            .A1(spare_logic0[8:7]),
             .A2(spare_logic0[6:5]),
-            .ZN(spare_logic0[8:7])
+            .ZN(spare_xna)
     );
 
     nr02d0 spare_logic_nor [1:0] (
-	`ifdef USE_POWER_PINS
-            .VPWR(vccd),
-            .VGND(vssd),
-            .VPB(vccd),
-            .VNB(vssd),
-	`endif
-            .A1(spare_xno),
+	// `ifdef USE_POWER_PINS
+    //         .VPWR(vccd),
+    //         .VGND(vssd),
+    //         .VPB(vccd),
+    //         .VNB(vssd),
+	// `endif
+            .A1(spare_logic0[12:11]),
             .A2(spare_logic0[10:9]),
-            .ZN(spare_logic0[12:11])
+            .ZN(spare_xno)
     );
 
     mx02d2 spare_logic_mux [1:0] (
-	`ifdef USE_POWER_PINS
-            .VPWR(vccd),
-            .VGND(vssd),
-            .VPB(vccd),
-            .VNB(vssd),
-	`endif
+	// `ifdef USE_POWER_PINS
+    //         .VPWR(vccd),
+    //         .VGND(vssd),
+    //         .VPB(vccd),
+    //         .VNB(vssd),
+	// `endif
             .Z(spare_xmx),
             .I0(spare_logic0[14:13]),
             .I1(spare_logic0[16:15]),
@@ -116,12 +116,12 @@ module spare_logic_block (
     );
 
     dfbrb1 spare_logic_flop [1:0] (
-	`ifdef USE_POWER_PINS
-            .VPWR(vccd),
-            .VGND(vssd),
-            .VPB(vccd),
-            .VNB(vssd),
-	`endif
+	// `ifdef USE_POWER_PINS
+    //         .VPWR(vccd),
+    //         .VGND(vssd),
+    //         .VPB(vccd),
+    //         .VNB(vssd),
+	// `endif
             .Q(spare_xfq),
             .QN(spare_xfqn),
             .D(spare_logic0[20:19]),
@@ -131,21 +131,21 @@ module spare_logic_block (
     );
 
     scl_tapvpwrvgnd_1 spare_logic_tap [1:0] (
-	`ifdef USE_POWER_PINS
-            .VPWR(vccd),
-            .VGND(vssd),
-            .VPB(vccd),
-            .VNB(vssd)
-	`endif
+	// `ifdef USE_POWER_PINS
+    //         .VPWR(vccd),
+    //         .VGND(vssd),
+    //         .VPB(vccd),
+    //         .VNB(vssd)
+	// `endif
     );
 
     scl_diode_2 spare_logic_diode [3:0] (
-	`ifdef USE_POWER_PINS
-            .VPWR(vccd),
-            .VGND(vssd),
-            .VPB(vccd),
-            .VNB(vssd),
-	`endif
+	// `ifdef USE_POWER_PINS
+    //         .VPWR(vccd),
+    //         .VGND(vssd),
+    //         .VPB(vccd),
+    //         .VNB(vssd),
+	// `endif
 	    .DIODE(spare_logic_nc)
     );
  

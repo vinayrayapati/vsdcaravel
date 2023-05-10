@@ -161,12 +161,12 @@ module mgmt_protect (
 	assign la_data_in_enable = la_iena_mprj & mprj_logic1[457:330];
 
 	nd02d0 user_to_mprj_in_gates [127:0] (
-`ifdef USE_POWER_PINS
-                .VPWR(vccd),
-                .VGND(vssd),
-                .VPB(vccd),
-                .VNB(vssd),
-`endif
+// `ifdef USE_POWER_PINS
+//                 .VPWR(vccd),
+//                 .VGND(vssd),
+//                 .VPB(vccd),
+//                 .VNB(vssd),
+// `endif
 		.A1(la_data_in_mprj_bar),
 		.A2(la_data_out_core),		// may be floating
 		.ZN(la_data_in_enable)
@@ -179,12 +179,12 @@ module mgmt_protect (
 	assign user_irq_enable = user_irq_ena & mprj_logic1[460:458];
 
 	nd02d0 user_irq_gates [2:0] (
-`ifdef USE_POWER_PINS
-                .VPWR(vccd),
-                .VGND(vssd),
-                .VPB(vccd),
-                .VNB(vssd),
-`endif
+// `ifdef USE_POWER_PINS
+//                 .VPWR(vccd),
+//                 .VGND(vssd),
+//                 .VPB(vccd),
+//                 .VNB(vssd),
+// `endif
 		.A1(user_irq_bar),
 		.A2(user_irq_core),		// may be floating
 		.ZN(user_irq_enable)
@@ -198,12 +198,12 @@ module mgmt_protect (
 	assign wb_in_enable = mprj_iena_wb & mprj_logic1[462];
 
 	nd02d0 user_wb_dat_gates [31:0] (
-`ifdef USE_POWER_PINS
-                .VPWR(vccd),
-                .VGND(vssd),
-                .VPB(vccd),
-                .VNB(vssd),
-`endif
+// `ifdef USE_POWER_PINS
+//                 .VPWR(vccd),
+//                 .VGND(vssd),
+//                 .VPB(vccd),
+//                 .VNB(vssd),
+// `endif
 		.A1(mprj_dat_i_core_bar),
 		.A2(mprj_dat_i_user),		// may be floating
 		.ZN(wb_in_enable)
@@ -212,12 +212,12 @@ module mgmt_protect (
 	assign mprj_dat_i_core = ~mprj_dat_i_core_bar;
 
 	nd02d0 user_wb_ack_gate (
-`ifdef USE_POWER_PINS
-                .VPWR(vccd),
-                .VGND(vssd),
-                .VPB(vccd),
-                .VNB(vssd),
-`endif
+// `ifdef USE_POWER_PINS
+//                 .VPWR(vccd),
+//                 .VGND(vssd),
+//                 .VPB(vccd),
+//                 .VNB(vssd),
+// `endif
 		.A1(mprj_ack_i_core_bar),
 		.A2(mprj_ack_i_user),		// may be floating
 		.ZN(wb_in_enable)
