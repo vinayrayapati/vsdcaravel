@@ -134,55 +134,74 @@ Identifying the difference in the ports declared in the firmware verilog files a
 
   - <img width="1512" alt="Screenshot 2023-03-14 at 11 38 07 AM" src="https://user-images.githubusercontent.com/110079631/225525267-81558290-327c-423f-b7fc-7ebd204b7f82.png">
 
-- ** Sixth Challenge:-**
+- **Sixth Challenge:-**
 
-Power pins errors
+**Power pins errors**
+Identifying the unnecessary power pins at this stage that are not required as they can be synthesized later to avoid the errors in the simulation at this stage.
 
-1.
+1. Power pin errors in macro_spare_cell module:
+    
     <img width="1512" alt="Screenshot 2023-04-19 at 2 31 05 PM" src="https://user-images.githubusercontent.com/110079631/233271060-a3aada4d-6756-4d89-a06c-154e4b69de1f.png">
 
-2.
-<img width="1286" alt="Screenshot 2023-04-19 at 2 31 31 PM" src="https://user-images.githubusercontent.com/110079631/233271087-070a4100-5697-4f9f-85e1-bd54c706c055.png">
+2. Power pin errors in housekeeping module:
 
-3.
-<img width="1224" alt="Screenshot 2023-04-19 at 2 31 40 PM" src="https://user-images.githubusercontent.com/110079631/233271116-0c91303f-1481-45c4-b12a-0645f9a304b4.png">
+    <img width="1286" alt="Screenshot 2023-04-19 at 2 31 31 PM" src="https://user-images.githubusercontent.com/110079631/233271087-070a4100-5697-4f9f-85e1-bd54c706c055.png">
 
-4.
-<img width="1309" alt="Screenshot 2023-04-19 at 2 31 59 PM" src="https://user-images.githubusercontent.com/110079631/233271135-6e68ea09-1b29-4990-a958-787131395aea.png">
+3. Power pin errors in digital_pll module:
 
-5.
-<img width="1329" alt="Screenshot 2023-04-19 at 2 32 09 PM" src="https://user-images.githubusercontent.com/110079631/233271157-a5134ef4-b26c-400b-9c32-22c43d111eb3.png">
+    <img width="1224" alt="Screenshot 2023-04-19 at 2 31 40 PM" src="https://user-images.githubusercontent.com/110079631/233271116-0c91303f-1481-45c4-b12a-0645f9a304b4.png">
 
-6.
-<img width="1217" alt="Screenshot 2023-04-19 at 2 32 20 PM" src="https://user-images.githubusercontent.com/110079631/233271175-e9a5ebc3-46ba-43f7-84a3-1b6cd3019622.png">
+4. Power pin errors in mgmt_protect module:
 
-7.
-<img width="1265" alt="Screenshot 2023-04-19 at 2 32 30 PM" src="https://user-images.githubusercontent.com/110079631/233271208-5c93fb7c-9cc8-46d8-992b-159fa13eb263.png">
+    <img width="1309" alt="Screenshot 2023-04-19 at 2 31 59 PM" src="https://user-images.githubusercontent.com/110079631/233271135-6e68ea09-1b29-4990-a958-787131395aea.png">
 
-8.
-<img width="1252" alt="Screenshot 2023-04-19 at 2 33 20 PM" src="https://user-images.githubusercontent.com/110079631/233271234-82269605-eda2-4726-8f74-8729b224c30f.png">
+5. Power pin errors in mgmt_protect_hv module:
 
-9.
-<img width="1190" alt="Screenshot 2023-04-19 at 2 34 01 PM" src="https://user-images.githubusercontent.com/110079631/233271256-a9c8ae69-6a03-4290-8a9b-9c9b27c4d934.png">
+    <img width="1329" alt="Screenshot 2023-04-19 at 2 32 09 PM" src="https://user-images.githubusercontent.com/110079631/233271157-a5134ef4-b26c-400b-9c32-22c43d111eb3.png">
 
-10.
-<img width="1320" alt="Screenshot 2023-04-19 at 2 36 22 PM" src="https://user-images.githubusercontent.com/110079631/233271286-822bc2b2-7a8d-4229-bd8f-3e2852bce398.png">
+6. Power pin errors in mgmt_core module:
 
-11.
-<img width="1248" alt="Screenshot 2023-04-19 at 2 36 44 PM" src="https://user-images.githubusercontent.com/110079631/233271307-f1588944-5551-4ff6-801c-a332ebb9d355.png">
+    <img width="1217" alt="Screenshot 2023-04-19 at 2 32 20 PM" src="https://user-images.githubusercontent.com/110079631/233271175-e9a5ebc3-46ba-43f7-84a3-1b6cd3019622.png">
 
-12.
-<img width="1257" alt="Screenshot 2023-04-19 at 2 37 02 PM" src="https://user-images.githubusercontent.com/110079631/233271330-9ca044b4-40dd-4b57-8742-2dbf3c75af03.png">
+7. Power pin errors in mprj_io module:
 
-13.
-<img width="1324" alt="Screenshot 2023-04-19 at 2 37 12 PM" src="https://user-images.githubusercontent.com/110079631/233271353-8dec1829-a6e3-4ea0-b0d9-84bce0b9eb10.png">
+    <img width="1265" alt="Screenshot 2023-04-19 at 2 32 30 PM" src="https://user-images.githubusercontent.com/110079631/233271208-5c93fb7c-9cc8-46d8-992b-159fa13eb263.png">
 
-14.
-<img width="1248" alt="Screenshot 2023-04-19 at 2 37 39 PM" src="https://user-images.githubusercontent.com/110079631/233271373-452965c6-8de9-4d84-8cff-8167c1e4a6fa.png">
+8. Power pin errors in simple_por module:
 
-15.
-<img width="1357" alt="Screenshot 2023-04-19 at 2 37 53 PM" src="https://user-images.githubusercontent.com/110079631/233271392-89603e0e-f571-4686-a799-e182c71f8976.png">
+    <img width="1252" alt="Screenshot 2023-04-19 at 2 33 20 PM" src="https://user-images.githubusercontent.com/110079631/233271234-82269605-eda2-4726-8f74-8729b224c30f.png">
 
+9. Power pin errors in xres_buf module:
+
+    <img width="1190" alt="Screenshot 2023-04-19 at 2 34 01 PM" src="https://user-images.githubusercontent.com/110079631/233271256-a9c8ae69-6a03-4290-8a9b-9c9b27c4d934.png">
+
+10. Power pin errors in gpio_default_blocks module:
+
+    <img width="1320" alt="Screenshot 2023-04-19 at 2 36 22 PM" src="https://user-images.githubusercontent.com/110079631/233271286-822bc2b2-7a8d-4229-bd8f-3e2852bce398.png">
+
+11. Power pin errors in chip_io module:
+
+     <img width="1248" alt="Screenshot 2023-04-19 at 2 36 44 PM" src="https://user-images.githubusercontent.com/110079631/233271307-f1588944-5551-4ff6-801c-a332ebb9d355.png">
+
+12. Power pin errors in constant_block module:
+
+     <img width="1257" alt="Screenshot 2023-04-19 at 2 37 02 PM" src="https://user-images.githubusercontent.com/110079631/233271330-9ca044b4-40dd-4b57-8742-2dbf3c75af03.png">
+
+13. Power pin errors in gpio_signal_buffering module:
+
+     <img width="1324" alt="Screenshot 2023-04-19 at 2 37 12 PM" src="https://user-images.githubusercontent.com/110079631/233271353-8dec1829-a6e3-4ea0-b0d9-84bce0b9eb10.png">
+
+14. Power pin errors in chip_io module:
+
+     - <img width="1248" alt="Screenshot 2023-04-19 at 2 37 39 PM" src="https://user-images.githubusercontent.com/110079631/233271373-452965c6-8de9-4d84-8cff-8167c1e4a6fa.png">
+
+     - <img width="1357" alt="Screenshot 2023-04-19 at 2 37 53 PM" src="https://user-images.githubusercontent.com/110079631/233271392-89603e0e-f571-4686-a799-e182c71f8976.png">
+
+- **Results after a successfull porting from sky130 to scl180**
+
+This is the final output obtained after succesfully eliminating all the porting errors and power pin errors:
+
+     <img width="407" alt="Screenshot 2023-04-25 at 11 32 50 AM" src="https://github.com/vinayrayapati/vsdcaravel/assets/110079631/dba845a9-b64e-40a7-91e4-aeacf142357d">
 
 
 ### Author
