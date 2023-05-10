@@ -239,11 +239,13 @@ Identifying the unnecessary power pins at this stage that are not required as th
 
 - This is the final output obtained after succesfully eliminating all the porting errors and power pin errors:
 
-   <img width="407" alt="Screenshot 2023-04-25 at 11 32 50 AM" src="https://github.com/vinayrayapati/vsdcaravel/assets/110079631/e0933126-0543-4097-8ce5-84e6cd97081e">
+   <img width="407" alt="Screenshot 2023-04-25 at 11 32 50 AM" src="https://github.com/vinayrayapati/vsdcaravel/assets/110079631/3bec2e92-757b-47cf-987d-8efe53ca3072">
+
 
 - This is the final output viewed in gtkwave
 
-  <img width="1223" alt="Screenshot 2023-05-10 at 11 22 50 AM" src="https://github.com/vinayrayapati/vsdcaravel/assets/110079631/e956570a-367f-46b1-8e61-58463fa2294a">
+  <img width="1223" alt="Screenshot 2023-05-10 at 11 22 50 AM" src="https://github.com/vinayrayapati/vsdcaravel/assets/110079631/993f56fd-de6f-4fd5-99df-414b9dd18441">
+
 
 
 ## 4. Future Work Left
@@ -251,7 +253,8 @@ Identifying the unnecessary power pins at this stage that are not required as th
 -  Rectify the simulation mismatches seen now by backtracing the signals.
 -  After the successful rectification of the simulation mismatches the expected output should be as ahown in the below image.
    
-   <img width="1157" alt="Screenshot 2023-05-10 at 11 22 32 AM" src="https://github.com/vinayrayapati/vsdcaravel/assets/110079631/1188edac-8f8f-4b23-8fc1-44d20fb42e0b">
+   <img width="1157" alt="Screenshot 2023-05-10 at 11 22 32 AM" src="https://github.com/vinayrayapati/vsdcaravel/assets/110079631/a07b523b-2484-4579-a48e-e29946bb23eb">
+
 
 
 
