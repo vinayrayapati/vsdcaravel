@@ -243,14 +243,16 @@ Identifying the unnecessary power pins at this stage that are not required as th
 
 - This is the final output viewed in gtkwave
 
-  <img width="1248" alt="Screenshot 2023-05-10 at 11 14 35 AM" src="https://github.com/vinayrayapati/vsdcaravel/assets/110079631/83971159-d5ac-4f5b-a2d4-e4869592d7e9">
+  <img width="1223" alt="Screenshot 2023-05-10 at 11 22 50 AM" src="https://github.com/vinayrayapati/vsdcaravel/assets/110079631/e956570a-367f-46b1-8e61-58463fa2294a">
+
 
 ## 4. Future Work Left
 
 -  Rectify the simulation mismatches seen now by backtracing the signals.
 -  After the successful rectification of the simulation mismatches the expected output should be as ahown in the below image.
    
-   <img width="1166" alt="Screenshot 2023-05-10 at 11 21 11 AM" src="https://github.com/vinayrayapati/vsdcaravel/assets/110079631/d11af21d-8f78-4abd-850e-ec0117be9344">
+   <img width="1157" alt="Screenshot 2023-05-10 at 11 22 32 AM" src="https://github.com/vinayrayapati/vsdcaravel/assets/110079631/1188edac-8f8f-4b23-8fc1-44d20fb42e0b">
+
 
 
 
