@@ -35,7 +35,7 @@ $ gtkwave hkspi.vcd
 
 - Replace the `zero` and `vcs_sim_model` directories in the scl pdk.
 
-- Modify the makefile inside the Caravel_pcb/verification/verilog/dv/caravel/mgmt_soc/hkspi directory according to the makefile provided in this repository. Changes should be made to the environment variables like `VERILOG_PATH` which is the path to the `zero` directory and the `LIBRARY_VERILOG` which is the path to the `vcs_sim_model` directory.
+- Modify the makefile inside the `Caravel_pcb/verification/verilog/dv/caravel/mgmt_soc/hkspi` directory according to the makefile provided in this repository. Changes should be made to the environment variables like `VERILOG_PATH` which is the path to the `zero` directory and the `LIBRARY_VERILOG` which is the path to the `vcs_sim_model` directory.
 
 ## 3. Adoption Challenges from sky130 to scl180
 
